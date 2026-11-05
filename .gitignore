@@ -1,0 +1,38 @@
+﻿# Data (never commit)
+data/*
+!data/README.md
+*.csv
+*.rar
+*.zip
+*.parquet
+*.duckdb
+
+# Heavy model files
+artifacts/models/
+checkpoints/
+*.bin
+*.safetensors
+*.pt
+*.pth
+*.pkl
+*.joblib
+*.onnx
+
+# Experiment tracking and secrets
+wandb/
+runs/
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Word temp files and OS
+~$*
+.DS_Store
+Thumbs.db
