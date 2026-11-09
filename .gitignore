@@ -36,3 +36,15 @@ venv/
 ~$*
 .DS_Store
 Thumbs.db
+# Ignore raw and interim large data files
+data/raw/*
+data/interim/*
+*.parquet
+*.csv
+
+# Allow gitkeep and summary artifacts
+!data/raw/.gitkeep
+!data/interim/.gitkeep
+!artifacts/eda/*.json
+!artifacts/eda/*.md
+!reports/figures/*.png

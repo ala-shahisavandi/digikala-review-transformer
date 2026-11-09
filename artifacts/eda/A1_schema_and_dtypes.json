@@ -1,0 +1,89 @@
+{
+  "title": "A1: Dataset Schema and Data Types",
+  "metadata": {
+    "total_records": 6156289,
+    "unique_products": 331599,
+    "unique_seller_codes": 0,
+    "unique_seller_titles": 29228,
+    "num_columns": 15,
+    "csv_file_size_mb": 1219.3,
+    "parquet_file_size_mb": 234.79,
+    "product_review_distribution": {
+      "min_reviews_per_product": 1,
+      "p25_reviews": 1.0,
+      "median_reviews": 4.0,
+      "mean_reviews": 18.565463104532885,
+      "std_reviews": 40.9340966816239,
+      "p75_reviews": 13.0,
+      "p90_reviews": 46.0,
+      "p99_reviews": 200.0,
+      "max_reviews_per_product": 400,
+      "products_with_only_1_review": 91944,
+      "products_with_le_5_reviews": 198458,
+      "products_with_100plus_reviews": 18047,
+      "products_with_1000plus_reviews": 0
+    }
+  },
+  "records": [
+    {
+      "column": "id",
+      "dtype": "Int64"
+    },
+    {
+      "column": "title",
+      "dtype": "String"
+    },
+    {
+      "column": "body",
+      "dtype": "String"
+    },
+    {
+      "column": "created_at",
+      "dtype": "String"
+    },
+    {
+      "column": "rate",
+      "dtype": "Float64"
+    },
+    {
+      "column": "recommendation_status",
+      "dtype": "String"
+    },
+    {
+      "column": "is_buyer",
+      "dtype": "Boolean"
+    },
+    {
+      "column": "product_id",
+      "dtype": "Int64"
+    },
+    {
+      "column": "advantages",
+      "dtype": "String"
+    },
+    {
+      "column": "disadvantages",
+      "dtype": "String"
+    },
+    {
+      "column": "likes",
+      "dtype": "Int64"
+    },
+    {
+      "column": "dislikes",
+      "dtype": "Int64"
+    },
+    {
+      "column": "seller_title",
+      "dtype": "String"
+    },
+    {
+      "column": "seller_code",
+      "dtype": "Int64"
+    },
+    {
+      "column": "true_to_size_rate",
+      "dtype": "Float64"
+    }
+  ]
+}

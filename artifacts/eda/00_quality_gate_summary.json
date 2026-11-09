@@ -1,0 +1,89 @@
+{
+  "schema_validation": {
+    "expected_columns": [
+      "id",
+      "title",
+      "body",
+      "created_at",
+      "rate",
+      "recommendation_status",
+      "is_buyer",
+      "product_id",
+      "advantages",
+      "disadvantages",
+      "likes",
+      "dislikes",
+      "seller_title",
+      "seller_code",
+      "true_to_size_rate"
+    ],
+    "actual_columns": [
+      "id",
+      "title",
+      "body",
+      "created_at",
+      "rate",
+      "recommendation_status",
+      "is_buyer",
+      "product_id",
+      "advantages",
+      "disadvantages",
+      "likes",
+      "dislikes",
+      "seller_title",
+      "seller_code",
+      "true_to_size_rate"
+    ],
+    "missing_columns": [],
+    "extra_columns": [],
+    "schema_passed": true
+  },
+  "quality_counts": {
+    "total_rows": 6156289,
+    "null_id_count": 0,
+    "non_integer_id_count": 0,
+    "unique_id_count": 6153060,
+    "null_rate_raw_count": 0,
+    "non_numeric_rate_count": 0,
+    "out_of_range_rate_count": 1,
+    "null_body_count": 0,
+    "empty_or_nan_body_count": 637,
+    "duplicate_id_count": 3229
+  },
+  "out_of_range_rate_records": [
+    {
+      "id": "38631814",
+      "rate": "2500.0",
+      "recommendation_status": "recommended",
+      "product_id": "5095301"
+    }
+  ],
+  "recommendation_status_raw_vocabulary": [
+    {
+      "recommendation_status": "recommended",
+      "len": 4162839
+    },
+    {
+      "recommendation_status": "nan",
+      "len": 894426
+    },
+    {
+      "recommendation_status": "no_idea",
+      "len": 594121
+    },
+    {
+      "recommendation_status": "not_recommended",
+      "len": 504903
+    }
+  ],
+  "is_buyer_raw_vocabulary": [
+    {
+      "is_buyer": "True",
+      "len": 5854108
+    },
+    {
+      "is_buyer": "False",
+      "len": 302181
+    }
+  ]
+}
