@@ -1,4 +1,4 @@
-# A1: Dataset Schema and Data Types
+# A1: Dataset Size, Schema and Concentration (raw vs clean)
 
 | column | dtype |
 | --- | --- |
@@ -15,15 +15,28 @@
 | likes | Int64 |
 | dislikes | Int64 |
 | seller_title | String |
-| seller_code | Int64 |
-| true_to_size_rate | Float64 |
+| seller_code | String |
+| true_to_size_rate | String |
 
-## Metadata
+- CSV size: 1219.3 MB; raw Parquet: 260.01 MB (78.7% smaller, 4.69x)
+- Extra pipeline columns in Parquet: ['row_idx', 'rate_out_of_range']
+
+## RAW
 - **total_records**: `6156289`
 - **unique_products**: `331599`
-- **unique_seller_codes**: `0`
-- **unique_seller_titles**: `29228`
-- **num_columns**: `15`
-- **csv_file_size_mb**: `1219.3`
-- **parquet_file_size_mb**: `234.79`
-- **product_review_distribution**: `{'min_reviews_per_product': 1, 'p25_reviews': 1.0, 'median_reviews': 4.0, 'mean_reviews': 18.565463104532885, 'std_reviews': 40.9340966816239, 'p75_reviews': 13.0, 'p90_reviews': 46.0, 'p99_reviews': 200.0, 'max_reviews_per_product': 400, 'products_with_only_1_review': 91944, 'products_with_le_5_reviews': 198458, 'products_with_100plus_reviews': 18047, 'products_with_1000plus_reviews': 0}`
+- **unique_seller_codes_excl_nan**: `29213`
+- **unique_seller_titles_excl_nan**: `29228`
+- **rows_without_seller**: `302181`
+- **unique_ids**: `6153060`
+- **product_review_distribution**: `{'min': 1, 'p25': 1.0, 'median': 4.0, 'mean': 18.57, 'std': 40.93, 'p75': 13.0, 'p90': 46.0, 'p99': 200.0, 'max': 400, 'products_with_1_review': 91944, 'products_with_le_5_reviews': 198458, 'products_with_100plus_reviews': 18047, 'products_with_200plus_reviews': 9734, 'products_with_1000plus_reviews': 0}`
+- **parquet_file_size_mb**: `260.01`
+
+## CLEAN
+- **total_records**: `6152858`
+- **unique_products**: `331598`
+- **unique_seller_codes_excl_nan**: `29213`
+- **unique_seller_titles_excl_nan**: `29228`
+- **rows_without_seller**: `301968`
+- **unique_ids**: `6152858`
+- **product_review_distribution**: `{'min': 1, 'p25': 1.0, 'median': 4.0, 'mean': 18.56, 'std': 40.9, 'p75': 13.0, 'p90': 46.0, 'p99': 200.0, 'max': 233, 'products_with_1_review': 91980, 'products_with_le_5_reviews': 198490, 'products_with_100plus_reviews': 18040, 'products_with_200plus_reviews': 9698, 'products_with_1000plus_reviews': 0}`
+- **parquet_file_size_mb**: `258.34`
