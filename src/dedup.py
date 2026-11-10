@@ -1,30 +1,25 @@
 """
 Step 2: Self-Contained Deduplication Policy Execution.
-- Audits duplicate IDs with fixed Unicode escapes (U+200C, U+064A->U+06CC, U+0643->U+06A9).
-- Category A & B: Keep first occurrence based on row_idx, prioritizing valid non-null/non-empty values.
-- Category C: Drop ALL occurrences of conflicting IDs.
+- Category A: duplicates identical in body/rate/recommendation_status.
+- Category B: duplicates differing only by null/'nan' or whitespace/ZWNJ/Yeh/Kaf variants.
+- Category C: real conflicts (different body text, rate, or recommendation).
+- A & B: keep one row per id (most complete, then lowest row_idx).
+- C: drop ALL occurrences of the id.
 - Verifies clean_total_rows == raw_unique_ids - len(cat_C_ids).
+
+classify_duplicates() is reusable (audit_verification.py imports it so both
+scripts use exactly the same category logic).
 """
 import json
-import re
 from pathlib import Path
 import polars as pl
+
+from eda_utils import normalize_text_minimal
 
 INPUT_PARQUET = Path("data/interim/digikala_comments.parquet")
 REPORT_JSON = Path("artifacts/eda/duplicate_ids_report.json")
 OUTPUT_PARQUET = Path("data/interim/digikala_clean.parquet")
 POLICY_JSON = Path("artifacts/eda/dedup_policy.json")
-
-
-def normalize_text_minimal(text: str | None) -> str:
-    if text is None:
-        return ""
-    s = (
-        text.replace("\u200c", " ")
-        .replace("\u064a", "\u06cc")
-        .replace("\u0643", "\u06a9")
-    )
-    return re.sub(r"\s+", " ", s).strip()
 
 
 def is_effectively_empty(val: object) -> bool:
@@ -34,30 +29,15 @@ def is_effectively_empty(val: object) -> bool:
     return s == "" or s.lower() == "nan"
 
 
-def run_dedup() -> dict:
-    df = pl.read_parquet(INPUT_PARQUET)
-    if "row_idx" not in df.columns:
-        df = df.with_row_index(name="row_idx", offset=0)
-
-    raw_rows = len(df)
-    raw_unique_ids = int(df["id"].n_unique())
-
-    id_counts = df.group_by("id").len().filter(pl.col("len") > 1)
-    dup_ids_list = id_counts["id"].to_list()
-    total_dup_ids = len(dup_ids_list)
-
-    dup_df = df.filter(pl.col("id").is_in(dup_ids_list)).sort(["id", "row_idx"])
-
-    id_groups = {}
+def classify_duplicates(dup_df: pl.DataFrame) -> dict:
+    """dup_df: only rows whose id appears more than once.
+    Required columns: row_idx, id, body, rate, recommendation_status."""
+    dup_df = dup_df.sort(["id", "row_idx"])
+    id_groups: dict = {}
     for row in dup_df.select(["row_idx", "id", "body", "rate", "recommendation_status"]).iter_rows(named=True):
-        gid = row["id"]
-        if gid not in id_groups:
-            id_groups[gid] = []
-        id_groups[gid].append(row)
+        id_groups.setdefault(row["id"], []).append(row)
 
-    cat_a_ids = []
-    cat_b_ids = []
-    cat_c_ids = []
+    cat_a_ids, cat_b_ids, cat_c_ids = [], [], []
     body_diff_only_whitespace = 0
     body_actual_text_diff = 0
 
@@ -95,29 +75,54 @@ def run_dedup() -> dict:
         else:
             cat_a_ids.append(gid)
 
+    return {
+        "cat_a_ids": cat_a_ids,
+        "cat_b_ids": cat_b_ids,
+        "cat_c_ids": cat_c_ids,
+        "body_diff_only_whitespace": body_diff_only_whitespace,
+        "body_actual_text_diff": body_actual_text_diff,
+    }
+
+
+def run_dedup() -> dict:
+    df = pl.read_parquet(INPUT_PARQUET)
+    if "row_idx" not in df.columns:
+        df = df.with_row_index(name="row_idx", offset=0)
+
+    raw_rows = len(df)
+    raw_unique_ids = int(df["id"].n_unique())
+
+    id_counts = df.group_by("id").len().filter(pl.col("len") > 1)
+    dup_ids_list = id_counts["id"].to_list()
+    total_dup_ids = len(dup_ids_list)
+
+    dup_df = df.filter(pl.col("id").is_in(dup_ids_list))
+    cls = classify_duplicates(dup_df)
+    cat_a_ids, cat_b_ids, cat_c_ids = cls["cat_a_ids"], cls["cat_b_ids"], cls["cat_c_ids"]
+    body_diff_only_whitespace = cls["body_diff_only_whitespace"]
+    body_actual_text_diff = cls["body_actual_text_diff"]
+
     # 1. Drop all rows belonging to Category C IDs
     df_no_c = df.filter(~pl.col("id").is_in(cat_c_ids))
     rows_removed_cat_c = raw_rows - len(df_no_c)
 
-    # 2. Keep first occurrence by row_idx for Category A & B, prioritizing valid non-null values
+    # 2. Keep one row per id for Category A & B: most complete, then lowest row_idx
     is_body_valid = (
-        pl.col("body").is_not_null() &
-        (pl.col("body").str.strip_chars() != "") &
-        (pl.col("body").str.strip_chars().str.to_lowercase() != "nan")
+        pl.col("body").is_not_null()
+        & (pl.col("body").str.strip_chars() != "")
+        & (pl.col("body").str.strip_chars().str.to_lowercase() != "nan")
     ).cast(pl.Int8)
-
     is_rate_valid = pl.col("rate").is_not_null().cast(pl.Int8)
-
     is_rec_valid = (
-        pl.col("recommendation_status").is_not_null() &
-        (pl.col("recommendation_status").str.strip_chars() != "") &
-        (pl.col("recommendation_status").str.strip_chars().str.to_lowercase() != "nan")
+        pl.col("recommendation_status").is_not_null()
+        & (pl.col("recommendation_status").str.strip_chars() != "")
+        & (pl.col("recommendation_status").str.strip_chars().str.to_lowercase() != "nan")
     ).cast(pl.Int8)
 
     df_clean = (
-        df_no_c.with_columns([
+        df_no_c.with_columns(
             (is_body_valid + is_rate_valid + is_rec_valid).alias("_completeness_score")
-        ])
+        )
         .sort(["id", "_completeness_score", "row_idx"], descending=[False, True, False])
         .unique(subset=["id"], keep="first", maintain_order=False)
         .drop("_completeness_score")
@@ -130,7 +135,7 @@ def run_dedup() -> dict:
     total_removed = raw_rows - clean_rows
 
     expected_clean_rows = raw_unique_ids - len(cat_c_ids)
-    formula_matches = (clean_rows == expected_clean_rows)
+    formula_matches = clean_rows == expected_clean_rows
 
     OUTPUT_PARQUET.parent.mkdir(parents=True, exist_ok=True)
     df_clean.write_parquet(OUTPUT_PARQUET, compression="zstd")
@@ -161,10 +166,10 @@ def run_dedup() -> dict:
     print("=== STEP 2: DEDUPLICATION POLICY COMPLETE ===")
     print(f"Raw Total Rows:               {raw_rows:,}")
     print(f"Raw Unique IDs:               {raw_unique_ids:,}")
-    print(f"Categories (Fixed Escapes):   A={len(cat_a_ids):,}, B={len(cat_b_ids):,}, C={len(cat_c_ids):,}")
+    print(f"Categories:                   A={len(cat_a_ids):,}, B={len(cat_b_ids):,}, C={len(cat_c_ids):,}")
     print(f"Body Diff (WS/ZWNJ/Yeh-Kaf):  {body_diff_only_whitespace:,} | Body Real Conflict: {body_actual_text_diff:,}")
     print(f"Category C IDs (drop all):    {len(cat_c_ids):,} IDs ({rows_removed_cat_c:,} rows removed)")
-    print(f"Category A+B extra rows:      {rows_removed_cat_ab:,} rows removed (kept first valid by row_idx)")
+    print(f"Category A+B extra rows:      {rows_removed_cat_ab:,} rows removed")
     print(f"Total Rows Removed:           {total_removed:,}")
     print(f"Expected Clean Rows (U - C):  {expected_clean_rows:,}")
     print(f"Actual Clean Rows:            {clean_rows:,}")

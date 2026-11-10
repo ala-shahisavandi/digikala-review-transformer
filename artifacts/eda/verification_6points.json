@@ -1,0 +1,1163 @@
+{
+  "q1_rate": {
+    "stats_raw": {
+      "min": 0.0,
+      "max": 2500.0,
+      "n_unique": 178,
+      "null_count": 0,
+      "lt_0": 0,
+      "gt_5": 1,
+      "gt_100": 1
+    },
+    "top20_rates": [
+      {
+        "rate": 5.0,
+        "len": 2398801
+      },
+      {
+        "rate": 4.0,
+        "len": 1515723
+      },
+      {
+        "rate": 3.0,
+        "len": 958799
+      },
+      {
+        "rate": 0.0,
+        "len": 529098
+      },
+      {
+        "rate": 1.0,
+        "len": 327662
+      },
+      {
+        "rate": 2.0,
+        "len": 198077
+      },
+      {
+        "rate": 4.5,
+        "len": 13479
+      },
+      {
+        "rate": 3.5,
+        "len": 12207
+      },
+      {
+        "rate": 4.25,
+        "len": 11653
+      },
+      {
+        "rate": 3.75,
+        "len": 10045
+      },
+      {
+        "rate": 4.2,
+        "len": 9843
+      },
+      {
+        "rate": 3.8,
+        "len": 8745
+      },
+      {
+        "rate": 4.4,
+        "len": 8675
+      },
+      {
+        "rate": 4.75,
+        "len": 8292
+      },
+      {
+        "rate": 4.6,
+        "len": 8152
+      },
+      {
+        "rate": 3.25,
+        "len": 7695
+      },
+      {
+        "rate": 4.8,
+        "len": 7276
+      },
+      {
+        "rate": 3.4,
+        "len": 7250
+      },
+      {
+        "rate": 3.6,
+        "len": 6975
+      },
+      {
+        "rate": 2.5,
+        "len": 5438
+      }
+    ],
+    "all_rates_gt_5": [
+      {
+        "rate": 2500.0,
+        "len": 1
+      }
+    ],
+    "csv_row_38631814": [
+      {
+        "csv_row_idx": 4369260,
+        "id": "38631814",
+        "title": "زیبا",
+        "body": "کوچک و با کیفیت",
+        "created_at": "9 شهریور 1401",
+        "rate": "2500.0",
+        "recommendation_status": "recommended",
+        "is_buyer": "True",
+        "product_id": "5095301",
+        "advantages": "nan",
+        "disadvantages": "nan",
+        "likes": "0",
+        "dislikes": "0",
+        "seller_title": "مستر راد",
+        "seller_code": "A4Z54",
+        "true_to_size_rate": "nan"
+      }
+    ],
+    "csv_rows_gt_100": [
+      {
+        "csv_row_idx": 4369260,
+        "id": "38631814",
+        "title": "زیبا",
+        "body": "کوچک و با کیفیت",
+        "created_at": "9 شهریور 1401",
+        "rate": "2500.0",
+        "recommendation_status": "recommended",
+        "is_buyer": "True",
+        "product_id": "5095301",
+        "advantages": "nan",
+        "disadvantages": "nan",
+        "likes": "0",
+        "dislikes": "0",
+        "seller_title": "مستر راد",
+        "seller_code": "A4Z54",
+        "true_to_size_rate": "nan"
+      }
+    ]
+  },
+  "categories_recomputed": {
+    "total_duplicate_ids": 3226,
+    "cat_A": 2911,
+    "cat_B": 113,
+    "cat_C": 202,
+    "matches_dedup_policy_json": true
+  },
+  "q2_products_400_and_hist": {
+    "products_with_400_raw": [
+      {
+        "product_id": 4095187,
+        "raw_rows": 400,
+        "unique_ids_in_product": 200,
+        "clean_rows": 200,
+        "duplicate_ids_count": 200,
+        "dup_ids_in_Cat_A": 200,
+        "dup_ids_in_Cat_B": 0,
+        "dup_ids_in_Cat_C": 0
+      },
+      {
+        "product_id": 3331597,
+        "raw_rows": 400,
+        "unique_ids_in_product": 200,
+        "clean_rows": 200,
+        "duplicate_ids_count": 200,
+        "dup_ids_in_Cat_A": 200,
+        "dup_ids_in_Cat_B": 0,
+        "dup_ids_in_Cat_C": 0
+      },
+      {
+        "product_id": 4332510,
+        "raw_rows": 400,
+        "unique_ids_in_product": 200,
+        "clean_rows": 200,
+        "duplicate_ids_count": 200,
+        "dup_ids_in_Cat_A": 200,
+        "dup_ids_in_Cat_B": 0,
+        "dup_ids_in_Cat_C": 0
+      }
+    ],
+    "exact_200_clean_products": 8564,
+    "histogram_190_to_233": [
+      {
+        "review_count": 190,
+        "product_count": 56
+      },
+      {
+        "review_count": 191,
+        "product_count": 52
+      },
+      {
+        "review_count": 192,
+        "product_count": 51
+      },
+      {
+        "review_count": 193,
+        "product_count": 57
+      },
+      {
+        "review_count": 194,
+        "product_count": 45
+      },
+      {
+        "review_count": 195,
+        "product_count": 43
+      },
+      {
+        "review_count": 196,
+        "product_count": 60
+      },
+      {
+        "review_count": 197,
+        "product_count": 51
+      },
+      {
+        "review_count": 198,
+        "product_count": 31
+      },
+      {
+        "review_count": 199,
+        "product_count": 82
+      },
+      {
+        "review_count": 200,
+        "product_count": 8564
+      },
+      {
+        "review_count": 201,
+        "product_count": 527
+      },
+      {
+        "review_count": 202,
+        "product_count": 261
+      },
+      {
+        "review_count": 203,
+        "product_count": 120
+      },
+      {
+        "review_count": 204,
+        "product_count": 71
+      },
+      {
+        "review_count": 205,
+        "product_count": 49
+      },
+      {
+        "review_count": 206,
+        "product_count": 33
+      },
+      {
+        "review_count": 207,
+        "product_count": 18
+      },
+      {
+        "review_count": 208,
+        "product_count": 15
+      },
+      {
+        "review_count": 209,
+        "product_count": 14
+      },
+      {
+        "review_count": 210,
+        "product_count": 3
+      },
+      {
+        "review_count": 211,
+        "product_count": 2
+      },
+      {
+        "review_count": 212,
+        "product_count": 1
+      },
+      {
+        "review_count": 213,
+        "product_count": 1
+      },
+      {
+        "review_count": 214,
+        "product_count": 5
+      },
+      {
+        "review_count": 215,
+        "product_count": 2
+      },
+      {
+        "review_count": 216,
+        "product_count": 4
+      },
+      {
+        "review_count": 218,
+        "product_count": 2
+      },
+      {
+        "review_count": 220,
+        "product_count": 2
+      },
+      {
+        "review_count": 223,
+        "product_count": 1
+      },
+      {
+        "review_count": 224,
+        "product_count": 1
+      },
+      {
+        "review_count": 228,
+        "product_count": 1
+      },
+      {
+        "review_count": 233,
+        "product_count": 1
+      }
+    ]
+  },
+  "q3_vanished_products": [
+    {
+      "product_id": 11937317,
+      "raw_row_count": 2,
+      "ids": [
+        54470119,
+        54470119
+      ],
+      "all_ids_in_cat_c": true,
+      "rows": [
+        {
+          "row_idx": 335831,
+          "id": 54470119,
+          "title": "nan",
+          "body": "محصول خوب و تحویل افتضاح",
+          "created_at": "18 مهر 1402",
+          "rate": 1.0,
+          "recommendation_status": "not_recommended",
+          "is_buyer": true,
+          "product_id": 11937317,
+          "advantages": "nan",
+          "disadvantages": "nan",
+          "likes": 0,
+          "dislikes": 0,
+          "seller_title": "هایپر آتا",
+          "seller_code": "F6XP3",
+          "true_to_size_rate": "nan",
+          "rate_out_of_range": false
+        },
+        {
+          "row_idx": 2826410,
+          "id": 54470119,
+          "title": "nan",
+          "body": "محصول خوب و تحویل افتضاح",
+          "created_at": "18 مهر 1402",
+          "rate": 5.0,
+          "recommendation_status": "recommended",
+          "is_buyer": true,
+          "product_id": 11937317,
+          "advantages": "nan",
+          "disadvantages": "nan",
+          "likes": 0,
+          "dislikes": 0,
+          "seller_title": "هایپر آتا",
+          "seller_code": "F6XP3",
+          "true_to_size_rate": "nan",
+          "rate_out_of_range": false
+        }
+      ]
+    }
+  ],
+  "q4_unicode_test": [
+    {
+      "test_case": "arabic_yeh_only",
+      "input_escaped": "\\u064a",
+      "output_escaped": "\\u06cc",
+      "input_codepoints": [
+        "U+064A"
+      ],
+      "output_codepoints": [
+        "U+06CC"
+      ]
+    },
+    {
+      "test_case": "arabic_kaf_only",
+      "input_escaped": "\\u0643",
+      "output_escaped": "\\u06a9",
+      "input_codepoints": [
+        "U+0643"
+      ],
+      "output_codepoints": [
+        "U+06A9"
+      ]
+    },
+    {
+      "test_case": "combined_with_zwnj_ws",
+      "input_escaped": " \\u0643\\u062a\\u0627\\u0628\\u200c\\u0647\\u0627\\u064a   \\u062e\\u0648\\u0628 ",
+      "output_escaped": "\\u06a9\\u062a\\u0627\\u0628 \\u0647\\u0627\\u06cc \\u062e\\u0648\\u0628",
+      "input_codepoints": [
+        "U+0020",
+        "U+0643",
+        "U+062A",
+        "U+0627",
+        "U+0628",
+        "U+200C",
+        "U+0647",
+        "U+0627",
+        "U+064A",
+        "U+0020",
+        "U+0020",
+        "U+0020",
+        "U+062E",
+        "U+0648",
+        "U+0628",
+        "U+0020"
+      ],
+      "output_codepoints": [
+        "U+06A9",
+        "U+062A",
+        "U+0627",
+        "U+0628",
+        "U+0020",
+        "U+0647",
+        "U+0627",
+        "U+06CC",
+        "U+0020",
+        "U+062E",
+        "U+0648",
+        "U+0628"
+      ]
+    }
+  ],
+  "q5_io_benchmark": {
+    "columns_tested": [
+      "id",
+      "title",
+      "body",
+      "created_at",
+      "rate",
+      "recommendation_status",
+      "is_buyer",
+      "product_id",
+      "advantages",
+      "disadvantages",
+      "likes",
+      "dislikes"
+    ],
+    "csv_runs_sec": [
+      6.822,
+      25.0604,
+      19.4741
+    ],
+    "parquet_runs_sec": [
+      19.0286,
+      15.8843,
+      13.3699
+    ],
+    "csv_avg_sec": 17.1188,
+    "parquet_avg_sec": 16.0943
+  },
+  "q6_body_nan_raw": {
+    "total": 637,
+    "by_recommendation_status": [
+      {
+        "recommendation_status": "recommended",
+        "len": 422
+      },
+      {
+        "recommendation_status": null,
+        "len": 136
+      },
+      {
+        "recommendation_status": "no_idea",
+        "len": 43
+      },
+      {
+        "recommendation_status": "not_recommended",
+        "len": 36
+      }
+    ],
+    "by_rate": [
+      {
+        "rate": 0.0,
+        "len": 100
+      },
+      {
+        "rate": 1.0,
+        "len": 18
+      },
+      {
+        "rate": 1.6,
+        "len": 1
+      },
+      {
+        "rate": 1.75,
+        "len": 1
+      },
+      {
+        "rate": 1.9,
+        "len": 1
+      },
+      {
+        "rate": 2.0,
+        "len": 13
+      },
+      {
+        "rate": 2.2,
+        "len": 1
+      },
+      {
+        "rate": 2.4,
+        "len": 1
+      },
+      {
+        "rate": 2.75,
+        "len": 1
+      },
+      {
+        "rate": 3.0,
+        "len": 93
+      },
+      {
+        "rate": 3.2,
+        "len": 1
+      },
+      {
+        "rate": 3.25,
+        "len": 1
+      },
+      {
+        "rate": 3.4,
+        "len": 3
+      },
+      {
+        "rate": 3.6,
+        "len": 2
+      },
+      {
+        "rate": 3.8,
+        "len": 2
+      },
+      {
+        "rate": 3.95,
+        "len": 1
+      },
+      {
+        "rate": 4.0,
+        "len": 114
+      },
+      {
+        "rate": 4.2,
+        "len": 2
+      },
+      {
+        "rate": 4.4,
+        "len": 1
+      },
+      {
+        "rate": 4.45,
+        "len": 1
+      },
+      {
+        "rate": 4.5,
+        "len": 3
+      },
+      {
+        "rate": 4.55,
+        "len": 1
+      },
+      {
+        "rate": 4.6,
+        "len": 1
+      },
+      {
+        "rate": 4.7,
+        "len": 1
+      },
+      {
+        "rate": 4.75,
+        "len": 1
+      },
+      {
+        "rate": 4.8,
+        "len": 1
+      },
+      {
+        "rate": 5.0,
+        "len": 271
+      }
+    ],
+    "by_rec_and_rate": [
+      {
+        "recommendation_status": null,
+        "rate": 0.0,
+        "len": 12
+      },
+      {
+        "recommendation_status": null,
+        "rate": 1.0,
+        "len": 5
+      },
+      {
+        "recommendation_status": null,
+        "rate": 1.9,
+        "len": 1
+      },
+      {
+        "recommendation_status": null,
+        "rate": 2.0,
+        "len": 3
+      },
+      {
+        "recommendation_status": null,
+        "rate": 3.0,
+        "len": 20
+      },
+      {
+        "recommendation_status": null,
+        "rate": 4.0,
+        "len": 27
+      },
+      {
+        "recommendation_status": null,
+        "rate": 4.5,
+        "len": 2
+      },
+      {
+        "recommendation_status": null,
+        "rate": 4.55,
+        "len": 1
+      },
+      {
+        "recommendation_status": null,
+        "rate": 4.7,
+        "len": 1
+      },
+      {
+        "recommendation_status": null,
+        "rate": 5.0,
+        "len": 64
+      },
+      {
+        "recommendation_status": "no_idea",
+        "rate": 2.0,
+        "len": 3
+      },
+      {
+        "recommendation_status": "no_idea",
+        "rate": 2.2,
+        "len": 1
+      },
+      {
+        "recommendation_status": "no_idea",
+        "rate": 2.75,
+        "len": 1
+      },
+      {
+        "recommendation_status": "no_idea",
+        "rate": 3.0,
+        "len": 30
+      },
+      {
+        "recommendation_status": "no_idea",
+        "rate": 3.25,
+        "len": 1
+      },
+      {
+        "recommendation_status": "no_idea",
+        "rate": 4.0,
+        "len": 4
+      },
+      {
+        "recommendation_status": "no_idea",
+        "rate": 5.0,
+        "len": 3
+      },
+      {
+        "recommendation_status": "not_recommended",
+        "rate": 0.0,
+        "len": 11
+      },
+      {
+        "recommendation_status": "not_recommended",
+        "rate": 1.0,
+        "len": 12
+      },
+      {
+        "recommendation_status": "not_recommended",
+        "rate": 1.6,
+        "len": 1
+      },
+      {
+        "recommendation_status": "not_recommended",
+        "rate": 1.75,
+        "len": 1
+      },
+      {
+        "recommendation_status": "not_recommended",
+        "rate": 2.0,
+        "len": 4
+      },
+      {
+        "recommendation_status": "not_recommended",
+        "rate": 3.0,
+        "len": 5
+      },
+      {
+        "recommendation_status": "not_recommended",
+        "rate": 4.0,
+        "len": 1
+      },
+      {
+        "recommendation_status": "not_recommended",
+        "rate": 5.0,
+        "len": 1
+      },
+      {
+        "recommendation_status": "recommended",
+        "rate": 0.0,
+        "len": 77
+      },
+      {
+        "recommendation_status": "recommended",
+        "rate": 1.0,
+        "len": 1
+      },
+      {
+        "recommendation_status": "recommended",
+        "rate": 2.0,
+        "len": 3
+      },
+      {
+        "recommendation_status": "recommended",
+        "rate": 2.4,
+        "len": 1
+      },
+      {
+        "recommendation_status": "recommended",
+        "rate": 3.0,
+        "len": 38
+      },
+      {
+        "recommendation_status": "recommended",
+        "rate": 3.2,
+        "len": 1
+      },
+      {
+        "recommendation_status": "recommended",
+        "rate": 3.4,
+        "len": 3
+      },
+      {
+        "recommendation_status": "recommended",
+        "rate": 3.6,
+        "len": 2
+      },
+      {
+        "recommendation_status": "recommended",
+        "rate": 3.8,
+        "len": 2
+      },
+      {
+        "recommendation_status": "recommended",
+        "rate": 3.95,
+        "len": 1
+      },
+      {
+        "recommendation_status": "recommended",
+        "rate": 4.0,
+        "len": 82
+      },
+      {
+        "recommendation_status": "recommended",
+        "rate": 4.2,
+        "len": 2
+      },
+      {
+        "recommendation_status": "recommended",
+        "rate": 4.4,
+        "len": 1
+      },
+      {
+        "recommendation_status": "recommended",
+        "rate": 4.45,
+        "len": 1
+      },
+      {
+        "recommendation_status": "recommended",
+        "rate": 4.5,
+        "len": 1
+      },
+      {
+        "recommendation_status": "recommended",
+        "rate": 4.6,
+        "len": 1
+      },
+      {
+        "recommendation_status": "recommended",
+        "rate": 4.75,
+        "len": 1
+      },
+      {
+        "recommendation_status": "recommended",
+        "rate": 4.8,
+        "len": 1
+      },
+      {
+        "recommendation_status": "recommended",
+        "rate": 5.0,
+        "len": 203
+      }
+    ]
+  },
+  "q6_body_nan_clean": {
+    "total": 637,
+    "by_recommendation_status": [
+      {
+        "recommendation_status": "recommended",
+        "len": 422
+      },
+      {
+        "recommendation_status": null,
+        "len": 136
+      },
+      {
+        "recommendation_status": "no_idea",
+        "len": 43
+      },
+      {
+        "recommendation_status": "not_recommended",
+        "len": 36
+      }
+    ],
+    "by_rate": [
+      {
+        "rate": 0.0,
+        "len": 100
+      },
+      {
+        "rate": 1.0,
+        "len": 18
+      },
+      {
+        "rate": 1.6,
+        "len": 1
+      },
+      {
+        "rate": 1.75,
+        "len": 1
+      },
+      {
+        "rate": 1.9,
+        "len": 1
+      },
+      {
+        "rate": 2.0,
+        "len": 13
+      },
+      {
+        "rate": 2.2,
+        "len": 1
+      },
+      {
+        "rate": 2.4,
+        "len": 1
+      },
+      {
+        "rate": 2.75,
+        "len": 1
+      },
+      {
+        "rate": 3.0,
+        "len": 93
+      },
+      {
+        "rate": 3.2,
+        "len": 1
+      },
+      {
+        "rate": 3.25,
+        "len": 1
+      },
+      {
+        "rate": 3.4,
+        "len": 3
+      },
+      {
+        "rate": 3.6,
+        "len": 2
+      },
+      {
+        "rate": 3.8,
+        "len": 2
+      },
+      {
+        "rate": 3.95,
+        "len": 1
+      },
+      {
+        "rate": 4.0,
+        "len": 114
+      },
+      {
+        "rate": 4.2,
+        "len": 2
+      },
+      {
+        "rate": 4.4,
+        "len": 1
+      },
+      {
+        "rate": 4.45,
+        "len": 1
+      },
+      {
+        "rate": 4.5,
+        "len": 3
+      },
+      {
+        "rate": 4.55,
+        "len": 1
+      },
+      {
+        "rate": 4.6,
+        "len": 1
+      },
+      {
+        "rate": 4.7,
+        "len": 1
+      },
+      {
+        "rate": 4.75,
+        "len": 1
+      },
+      {
+        "rate": 4.8,
+        "len": 1
+      },
+      {
+        "rate": 5.0,
+        "len": 271
+      }
+    ],
+    "by_rec_and_rate": [
+      {
+        "recommendation_status": null,
+        "rate": 0.0,
+        "len": 12
+      },
+      {
+        "recommendation_status": null,
+        "rate": 1.0,
+        "len": 5
+      },
+      {
+        "recommendation_status": null,
+        "rate": 1.9,
+        "len": 1
+      },
+      {
+        "recommendation_status": null,
+        "rate": 2.0,
+        "len": 3
+      },
+      {
+        "recommendation_status": null,
+        "rate": 3.0,
+        "len": 20
+      },
+      {
+        "recommendation_status": null,
+        "rate": 4.0,
+        "len": 27
+      },
+      {
+        "recommendation_status": null,
+        "rate": 4.5,
+        "len": 2
+      },
+      {
+        "recommendation_status": null,
+        "rate": 4.55,
+        "len": 1
+      },
+      {
+        "recommendation_status": null,
+        "rate": 4.7,
+        "len": 1
+      },
+      {
+        "recommendation_status": null,
+        "rate": 5.0,
+        "len": 64
+      },
+      {
+        "recommendation_status": "no_idea",
+        "rate": 2.0,
+        "len": 3
+      },
+      {
+        "recommendation_status": "no_idea",
+        "rate": 2.2,
+        "len": 1
+      },
+      {
+        "recommendation_status": "no_idea",
+        "rate": 2.75,
+        "len": 1
+      },
+      {
+        "recommendation_status": "no_idea",
+        "rate": 3.0,
+        "len": 30
+      },
+      {
+        "recommendation_status": "no_idea",
+        "rate": 3.25,
+        "len": 1
+      },
+      {
+        "recommendation_status": "no_idea",
+        "rate": 4.0,
+        "len": 4
+      },
+      {
+        "recommendation_status": "no_idea",
+        "rate": 5.0,
+        "len": 3
+      },
+      {
+        "recommendation_status": "not_recommended",
+        "rate": 0.0,
+        "len": 11
+      },
+      {
+        "recommendation_status": "not_recommended",
+        "rate": 1.0,
+        "len": 12
+      },
+      {
+        "recommendation_status": "not_recommended",
+        "rate": 1.6,
+        "len": 1
+      },
+      {
+        "recommendation_status": "not_recommended",
+        "rate": 1.75,
+        "len": 1
+      },
+      {
+        "recommendation_status": "not_recommended",
+        "rate": 2.0,
+        "len": 4
+      },
+      {
+        "recommendation_status": "not_recommended",
+        "rate": 3.0,
+        "len": 5
+      },
+      {
+        "recommendation_status": "not_recommended",
+        "rate": 4.0,
+        "len": 1
+      },
+      {
+        "recommendation_status": "not_recommended",
+        "rate": 5.0,
+        "len": 1
+      },
+      {
+        "recommendation_status": "recommended",
+        "rate": 0.0,
+        "len": 77
+      },
+      {
+        "recommendation_status": "recommended",
+        "rate": 1.0,
+        "len": 1
+      },
+      {
+        "recommendation_status": "recommended",
+        "rate": 2.0,
+        "len": 3
+      },
+      {
+        "recommendation_status": "recommended",
+        "rate": 2.4,
+        "len": 1
+      },
+      {
+        "recommendation_status": "recommended",
+        "rate": 3.0,
+        "len": 38
+      },
+      {
+        "recommendation_status": "recommended",
+        "rate": 3.2,
+        "len": 1
+      },
+      {
+        "recommendation_status": "recommended",
+        "rate": 3.4,
+        "len": 3
+      },
+      {
+        "recommendation_status": "recommended",
+        "rate": 3.6,
+        "len": 2
+      },
+      {
+        "recommendation_status": "recommended",
+        "rate": 3.8,
+        "len": 2
+      },
+      {
+        "recommendation_status": "recommended",
+        "rate": 3.95,
+        "len": 1
+      },
+      {
+        "recommendation_status": "recommended",
+        "rate": 4.0,
+        "len": 82
+      },
+      {
+        "recommendation_status": "recommended",
+        "rate": 4.2,
+        "len": 2
+      },
+      {
+        "recommendation_status": "recommended",
+        "rate": 4.4,
+        "len": 1
+      },
+      {
+        "recommendation_status": "recommended",
+        "rate": 4.45,
+        "len": 1
+      },
+      {
+        "recommendation_status": "recommended",
+        "rate": 4.5,
+        "len": 1
+      },
+      {
+        "recommendation_status": "recommended",
+        "rate": 4.6,
+        "len": 1
+      },
+      {
+        "recommendation_status": "recommended",
+        "rate": 4.75,
+        "len": 1
+      },
+      {
+        "recommendation_status": "recommended",
+        "rate": 4.8,
+        "len": 1
+      },
+      {
+        "recommendation_status": "recommended",
+        "rate": 5.0,
+        "len": 203
+      }
+    ]
+  }
+}
