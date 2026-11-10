@@ -2,6 +2,8 @@
   "source_parquet": "data\\interim\\digikala_clean.parquet",
   "total_clean_rows": 6152858,
   "null_product_id_rows": 0,
+  "cap_analyzed": 200,
+  "note": "Raw 400-review products were scraped twice (200 unique ids each, all Category A); real cap after dedup is 200.",
   "clean_product_distribution": {
     "unique_products": 331598,
     "min": 1,
@@ -15,12 +17,147 @@
     "p99": 200.0,
     "max": 233,
     "single_review_products": 91980,
-    "over_300_products": 0,
-    "between_301_350_products": 0,
-    "between_351_399_products": 0,
-    "exact_400_products": 0,
-    "over_400_products": 0
+    "below_200_products": 321900,
+    "exact_200_products": 8564,
+    "over_200_products": 1134,
+    "at_least_200_products": 9698,
+    "reviews_in_products_ge_200": 1942533,
+    "share_of_reviews_in_products_ge_200_pct": 31.57,
+    "share_of_products_ge_200_pct": 2.92
   },
-  "top_count_spikes_ge_300": [],
+  "counts_ge_190": [
+    {
+      "review_count": 190,
+      "num_products": 56
+    },
+    {
+      "review_count": 191,
+      "num_products": 52
+    },
+    {
+      "review_count": 192,
+      "num_products": 51
+    },
+    {
+      "review_count": 193,
+      "num_products": 57
+    },
+    {
+      "review_count": 194,
+      "num_products": 45
+    },
+    {
+      "review_count": 195,
+      "num_products": 43
+    },
+    {
+      "review_count": 196,
+      "num_products": 60
+    },
+    {
+      "review_count": 197,
+      "num_products": 51
+    },
+    {
+      "review_count": 198,
+      "num_products": 31
+    },
+    {
+      "review_count": 199,
+      "num_products": 82
+    },
+    {
+      "review_count": 200,
+      "num_products": 8564
+    },
+    {
+      "review_count": 201,
+      "num_products": 527
+    },
+    {
+      "review_count": 202,
+      "num_products": 261
+    },
+    {
+      "review_count": 203,
+      "num_products": 120
+    },
+    {
+      "review_count": 204,
+      "num_products": 71
+    },
+    {
+      "review_count": 205,
+      "num_products": 49
+    },
+    {
+      "review_count": 206,
+      "num_products": 33
+    },
+    {
+      "review_count": 207,
+      "num_products": 18
+    },
+    {
+      "review_count": 208,
+      "num_products": 15
+    },
+    {
+      "review_count": 209,
+      "num_products": 14
+    },
+    {
+      "review_count": 210,
+      "num_products": 3
+    },
+    {
+      "review_count": 211,
+      "num_products": 2
+    },
+    {
+      "review_count": 212,
+      "num_products": 1
+    },
+    {
+      "review_count": 213,
+      "num_products": 1
+    },
+    {
+      "review_count": 214,
+      "num_products": 5
+    },
+    {
+      "review_count": 215,
+      "num_products": 2
+    },
+    {
+      "review_count": 216,
+      "num_products": 4
+    },
+    {
+      "review_count": 218,
+      "num_products": 2
+    },
+    {
+      "review_count": 220,
+      "num_products": 2
+    },
+    {
+      "review_count": 223,
+      "num_products": 1
+    },
+    {
+      "review_count": 224,
+      "num_products": 1
+    },
+    {
+      "review_count": 228,
+      "num_products": 1
+    },
+    {
+      "review_count": 233,
+      "num_products": 1
+    }
+  ],
   "figure_path": "reports\\figures\\A1_product_review_distribution.png"
 }
