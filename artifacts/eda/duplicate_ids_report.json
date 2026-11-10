@@ -1,0 +1,41 @@
+{
+  "summary": {
+    "total_rows": 6156289,
+    "unique_ids": 6153060,
+    "extra_rows": 3229,
+    "total_duplicate_ids": 3226
+  },
+  "question_1_breakdown": {
+    "identical_targets_count": 2911,
+    "identical_targets_pct": 90.24,
+    "null_or_format_variant_count": 113,
+    "null_or_format_variant_pct": 3.5,
+    "actual_conflict_count": 202,
+    "actual_conflict_pct": 6.26
+  },
+  "question_2_body_analysis": {
+    "body_exact_same_count": 2985,
+    "body_diff_whitespace_or_zwnj_only": 87,
+    "body_actual_text_diff": 154
+  },
+  "question_3_union_diff": {
+    "ids_differing_in_body": 241,
+    "ids_differing_in_rate": 79,
+    "ids_differing_in_recommendation_status": 101,
+    "union_ids_differing_in_any_of_three": 315
+  },
+  "question_4_recurring_ids": [
+    {
+      "id": 53973644,
+      "len": 3
+    },
+    {
+      "id": 54490233,
+      "len": 3
+    },
+    {
+      "id": 53766536,
+      "len": 3
+    }
+  ]
+}

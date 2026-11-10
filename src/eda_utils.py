@@ -1,158 +1,176 @@
 ﻿"""
-Utility functions for Part A: Descriptive Statistics & Data Understanding.
-Designed for memory-efficient processing with Polars on large datasets (~7M rows).
+EDA Utilities for Digikala Review Dataset
+Includes rigorous audit for duplicate IDs and content conflicts.
 """
-
 import json
+import re
 from pathlib import Path
-from typing import Any, Dict, Optional
 import polars as pl
-import matplotlib.pyplot as plt
 
-# Project Constants (Strict Compliance with Project Definition)
-SEED = 2026
-EXPECTED_COLUMNS = [
-    "id",
-    "title",
-    "body",
-    "created_at",
-    "rate",
-    "recommendation_status",
-    "is_buyer",
-    "product_id",
-    "advantages",
-    "disadvantages",
-    "likes",
-    "dislikes",
-    "seller_title",
-    "seller_code",
-    "true_to_size_rate",
-]
+def normalize_text_minimal(text: str | None) -> str:
+    if text is None:
+        return ""
+    # Normalize common Persian/Arabic character variants
+    s = text.replace("\u200c", " ").replace("ي", "ی").replace("ك", "ک")
+    # Collapse multiple whitespace characters
+    s = re.sub(r"\s+", " ", s).strip()
+    return s
 
-# Paths
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
-DATA_RAW_DIR = PROJECT_ROOT / "data" / "raw"
-DATA_INTERIM_DIR = PROJECT_ROOT / "data" / "interim"
-ARTIFACTS_EDA_DIR = PROJECT_ROOT / "artifacts" / "eda"
-FIGURES_DIR = PROJECT_ROOT / "reports" / "figures"
-
-
-def ensure_directories() -> None:
-    """Ensure all required output directories exist."""
-    for d in [DATA_RAW_DIR, DATA_INTERIM_DIR, ARTIFACTS_EDA_DIR, FIGURES_DIR]:
-        d.mkdir(parents=True, exist_ok=True)
-
-
-def locate_raw_csv() -> Path:
-    """Locate digikala-comments.csv in data/raw/ or data/."""
-    candidates = [
-        DATA_RAW_DIR / "digikala-comments.csv",
-        PROJECT_ROOT / "data" / "digikala-comments.csv",
-    ]
-    for path in candidates:
-        if path.exists():
-            return path
-    raise FileNotFoundError(
-        f"Could not find 'digikala-comments.csv' in {[str(c) for c in candidates]}"
-    )
-
-
-def save_json_artifact(data: Dict[str, Any], filename: str) -> Path:
-    """Save a dictionary as a formatted JSON file in artifacts/eda/."""
-    ensure_directories()
-    if not filename.endswith(".json"):
-        filename += ".json"
-    out_path = ARTIFACTS_EDA_DIR / filename
-    with open(out_path, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
-    print(f"[Artifact Saved] JSON -> {out_path.relative_to(PROJECT_ROOT)}")
-    return out_path
-
-
-def df_to_markdown_table(df: pl.DataFrame) -> str:
-    """Convert a Polars DataFrame into a clean GitHub-flavored Markdown table."""
-    cols = df.columns
-    header = "| " + " | ".join(str(c) for c in cols) + " |"
-    separator = "| " + " | ".join(["---"] * len(cols)) + " |"
-    rows = []
-    for row in df.iter_rows():
-        formatted_cells = []
-        for val in row:
-            if isinstance(val, float):
-                formatted_cells.append(f"{val:,.4f}".rstrip("0").rstrip("."))
-            elif isinstance(val, int):
-                formatted_cells.append(f"{val:,}")
+def audit_duplicate_ids(
+    parquet_path: str = "data/interim/digikala_comments.parquet",
+    output_json_path: str = "artifacts/eda/duplicate_ids_report.json"
+) -> dict:
+    Path(output_json_path).parent.mkdir(parents=True, exist_ok=True)
+    df = pl.read_parquet(parquet_path)
+    
+    total_rows = len(df)
+    unique_ids = df["id"].n_unique()
+    extra_rows = total_rows - unique_ids
+    
+    # 1. Identify IDs with duplicates
+    id_counts = df.group_by("id").len().filter(pl.col("len") > 1)
+    dup_ids_list = id_counts["id"].to_list()
+    total_dup_ids = len(dup_ids_list)
+    
+    # Find IDs appearing more than 2 times
+    ids_over_two = id_counts.filter(pl.col("len") > 2).sort("len", descending=True)
+    top_recurring_ids = ids_over_two.to_dicts()
+    
+    dup_df = df.filter(pl.col("id").is_in(dup_ids_list)).sort(["id", "created_at"])
+    
+    # Group rows by ID into dictionaries
+    id_groups = {}
+    cols_of_interest = ["id", "body", "rate", "recommendation_status", "likes", "dislikes", "title", "product_id"]
+    for row in dup_df.select(cols_of_interest).iter_rows(named=True):
+        gid = row["id"]
+        if gid not in id_groups:
+            id_groups[gid] = []
+        id_groups[gid].append(row)
+        
+    identical_target_ids = 0
+    null_vs_value_ids = 0
+    actual_conflict_ids = 0
+    
+    # Text-specific metrics for body
+    body_exact_same = 0
+    body_diff_only_whitespace = 0
+    body_actual_text_diff = 0
+    
+    ids_with_body_diff = set()
+    ids_with_rate_diff = set()
+    ids_with_rec_diff = set()
+    
+    for gid, rows in id_groups.items():
+        # Check Rate
+        rates = [r["rate"] for r in rows]
+        rates_valid = [r for r in rates if r is not None]
+        rates_unique_valid = set(rates_valid)
+        has_rate_conflict = len(rates_unique_valid) > 1
+        has_rate_null_diff = (len(rates_unique_valid) == 1) and (len(rates_valid) < len(rates))
+        if has_rate_conflict or has_rate_null_diff:
+            ids_with_rate_diff.add(gid)
+            
+        # Check Recommendation Status
+        recs = [r["recommendation_status"] for r in rows]
+        recs_valid = [
+            r for r in recs 
+            if r is not None and str(r).strip() != "" and str(r).lower() != "nan"
+        ]
+        recs_unique_valid = set(recs_valid)
+        has_rec_conflict = len(recs_unique_valid) > 1
+        has_rec_null_diff = (len(recs_unique_valid) == 1) and (len(recs_valid) < len(recs))
+        if has_rec_conflict or has_rec_null_diff:
+            ids_with_rec_diff.add(gid)
+            
+        # Check Body
+        bodies = [r["body"] for r in rows]
+        bodies_valid = [
+            b for b in bodies 
+            if b is not None and str(b).strip() != "" and str(b).lower() != "nan"
+        ]
+        bodies_unique_valid = set(bodies_valid)
+        
+        has_body_diff = len(set(bodies)) > 1
+        if has_body_diff:
+            ids_with_body_diff.add(gid)
+            if len(bodies_unique_valid) <= 1:
+                pass  # only null/nan vs string
             else:
-                formatted_cells.append(str(val) if val is not None else "NULL")
-        rows.append("| " + " | ".join(formatted_cells) + " |")
-    return "\n".join([header, separator] + rows)
+                # Compare raw vs normalized
+                normalized_bodies = {normalize_text_minimal(b) for b in bodies_valid}
+                if len(normalized_bodies) == 1:
+                    body_diff_only_whitespace += 1
+                else:
+                    body_actual_text_diff += 1
+        else:
+            body_exact_same += 1
 
+        # High-level categorisation for (body, rate, rec)
+        has_any_actual_conflict = (
+            has_rate_conflict or 
+            has_rec_conflict or 
+            (len(bodies_unique_valid) > 1 and len({normalize_text_minimal(b) for b in bodies_valid}) > 1)
+        )
+        has_any_null_vs_val = (
+            (has_rate_null_diff and not has_rate_conflict) or
+            (has_rec_null_diff and not has_rec_conflict) or
+            (len(bodies_unique_valid) == 1 and len(bodies_valid) < len(bodies)) or
+            (len(bodies_unique_valid) > 1 and len({normalize_text_minimal(b) for b in bodies_valid}) == 1)
+        )
+        
+        if has_any_actual_conflict:
+            actual_conflict_ids += 1
+        elif has_any_null_vs_val:
+            null_vs_value_ids += 1
+        else:
+            identical_target_ids += 1
 
-def save_table_artifact(
-    df: pl.DataFrame,
-    base_name: str,
-    title: Optional[str] = None,
-    extra_metadata: Optional[Dict[str, Any]] = None,
-) -> None:
-    """
-    Save a Polars summary DataFrame as both Markdown (.md) and JSON (.json)
-    in artifacts/eda/ (since *.csv is git-ignored).
-    """
-    ensure_directories()
-    md_path = ARTIFACTS_EDA_DIR / f"{base_name}.md"
-    json_path = ARTIFACTS_EDA_DIR / f"{base_name}.json"
-
-    # 1. Save Markdown
-    md_content = ""
-    if title:
-        md_content += f"# {title}\n\n"
-    md_content += df_to_markdown_table(df) + "\n"
-    if extra_metadata:
-        md_content += "\n## Metadata\n"
-        for k, v in extra_metadata.items():
-            md_content += f"- **{k}**: `{v}`\n"
-
-    with open(md_path, "w", encoding="utf-8") as f:
-        f.write(md_content)
-
-    # 2. Save JSON
-    payload = {
-        "title": title or base_name,
-        "metadata": extra_metadata or {},
-        "records": df.to_dicts(),
+    union_diff_ids = ids_with_body_diff.union(ids_with_rate_diff).union(ids_with_rec_diff)
+    
+    report = {
+        "summary": {
+            "total_rows": total_rows,
+            "unique_ids": unique_ids,
+            "extra_rows": extra_rows,
+            "total_duplicate_ids": total_dup_ids,
+        },
+        "question_1_breakdown": {
+            "identical_targets_count": identical_target_ids,
+            "identical_targets_pct": round(identical_target_ids / total_dup_ids * 100, 2),
+            "null_or_format_variant_count": null_vs_value_ids,
+            "null_or_format_variant_pct": round(null_vs_value_ids / total_dup_ids * 100, 2),
+            "actual_conflict_count": actual_conflict_ids,
+            "actual_conflict_pct": round(actual_conflict_ids / total_dup_ids * 100, 2),
+        },
+        "question_2_body_analysis": {
+            "body_exact_same_count": body_exact_same,
+            "body_diff_whitespace_or_zwnj_only": body_diff_only_whitespace,
+            "body_actual_text_diff": body_actual_text_diff,
+        },
+        "question_3_union_diff": {
+            "ids_differing_in_body": len(ids_with_body_diff),
+            "ids_differing_in_rate": len(ids_with_rate_diff),
+            "ids_differing_in_recommendation_status": len(ids_with_rec_diff),
+            "union_ids_differing_in_any_of_three": len(union_diff_ids),
+        },
+        "question_4_recurring_ids": top_recurring_ids,
     }
-    with open(json_path, "w", encoding="utf-8") as f:
-        json.dump(payload, f, ensure_ascii=False, indent=2)
+    
+    with open(output_json_path, "w", encoding="utf-8") as f:
+        json.dump(report, f, indent=2, ensure_ascii=False)
+        
+    print("=== AUDIT SUMMARY ===")
+    print(f"Total Unique Duplicate IDs: {total_dup_ids:,}")
+    print(f"(A) Identical in targets (body, rate, rec): {identical_target_ids:,} ({report['question_1_breakdown']['identical_targets_pct']}%)")
+    print(f"(B) Null/Whitespace variation only: {null_vs_value_ids:,} ({report['question_1_breakdown']['null_or_format_variant_pct']}%)")
+    print(f"(C) Actual semantic/label conflict: {actual_conflict_ids:,} ({report['question_1_breakdown']['actual_conflict_pct']}%)")
+    print(f"\nBody Details: Whitespace/ZWNJ diff = {body_diff_only_whitespace:,} | Real text diff = {body_actual_text_diff:,}")
+    print(f"Union of IDs differing in body, rate, or rec: {len(union_diff_ids):,}")
+    print(f"IDs appearing > 2 times: {len(top_recurring_ids)}")
+    for item in top_recurring_ids:
+        print(f"  - id={item['id']}: count={item['len']}")
+    print(f"\nArtifact saved to: {output_json_path}")
+    return report
 
-    print(
-        f"[Artifact Saved] Table -> {md_path.relative_to(PROJECT_ROOT)} & {json_path.relative_to(PROJECT_ROOT)}"
-    )
-
-
-def deterministic_sample_lazy(
-    lf: pl.LazyFrame,
-    id_col: str = "id",
-    fraction: float = 0.05,
-    seed: int = SEED,
-) -> pl.LazyFrame:
-    """
-    Deterministic hash-based sampling on LazyFrame using `id` column and fixed seed.
-    Avoids loading the full dataset into memory while guaranteeing 100% reproducibility.
-    Rule: hash(id, seed) % 10_000 < int(fraction * 10_000)
-    """
-    threshold = int(fraction * 10_000)
-    return lf.filter(
-        (pl.col(id_col).cast(pl.Utf8).hash(seed=seed) % 10_000) < threshold
-    )
-
-
-def setup_plot_style() -> None:
-    """Configure matplotlib for high-resolution, clean publication-grade plots with English labels."""
-    plt.rcParams["figure.dpi"] = 150
-    plt.rcParams["savefig.dpi"] = 300
-    plt.rcParams["font.sans-serif"] = ["DejaVu Sans", "Arial", "Segoe UI"]
-    plt.rcParams["axes.edgecolor"] = "#333333"
-    plt.rcParams["axes.linewidth"] = 0.8
-    plt.rcParams["axes.grid"] = True
-    plt.rcParams["grid.alpha"] = 0.3
-    plt.rcParams["grid.linestyle"] = "--"
+if __name__ == "__main__":
+    audit_duplicate_ids()
