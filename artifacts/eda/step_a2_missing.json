@@ -1,0 +1,469 @@
+{
+  "definition_of_missing": "null OR string in ['', 'nan', 'none', 'null'] after strip/lowercase",
+  "per_column_raw": [
+    {
+      "column": "id",
+      "dtype": "Int64",
+      "null_count": 0,
+      "literal_nan_or_empty": 0,
+      "missing_total": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "column": "title",
+      "dtype": "String",
+      "null_count": 0,
+      "literal_nan_or_empty": 2866415,
+      "missing_total": 2866415,
+      "missing_pct": 46.561
+    },
+    {
+      "column": "body",
+      "dtype": "String",
+      "null_count": 0,
+      "literal_nan_or_empty": 637,
+      "missing_total": 637,
+      "missing_pct": 0.01
+    },
+    {
+      "column": "created_at",
+      "dtype": "String",
+      "null_count": 0,
+      "literal_nan_or_empty": 0,
+      "missing_total": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "column": "rate",
+      "dtype": "Float64",
+      "null_count": 0,
+      "literal_nan_or_empty": 0,
+      "missing_total": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "column": "recommendation_status",
+      "dtype": "String",
+      "null_count": 894426,
+      "literal_nan_or_empty": 0,
+      "missing_total": 894426,
+      "missing_pct": 14.529
+    },
+    {
+      "column": "is_buyer",
+      "dtype": "Boolean",
+      "null_count": 0,
+      "literal_nan_or_empty": 0,
+      "missing_total": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "column": "product_id",
+      "dtype": "Int64",
+      "null_count": 0,
+      "literal_nan_or_empty": 0,
+      "missing_total": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "column": "advantages",
+      "dtype": "String",
+      "null_count": 0,
+      "literal_nan_or_empty": 5448084,
+      "missing_total": 5448084,
+      "missing_pct": 88.496
+    },
+    {
+      "column": "disadvantages",
+      "dtype": "String",
+      "null_count": 0,
+      "literal_nan_or_empty": 5744017,
+      "missing_total": 5744017,
+      "missing_pct": 93.303
+    },
+    {
+      "column": "likes",
+      "dtype": "Int64",
+      "null_count": 0,
+      "literal_nan_or_empty": 0,
+      "missing_total": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "column": "dislikes",
+      "dtype": "Int64",
+      "null_count": 0,
+      "literal_nan_or_empty": 0,
+      "missing_total": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "column": "seller_title",
+      "dtype": "String",
+      "null_count": 0,
+      "literal_nan_or_empty": 302181,
+      "missing_total": 302181,
+      "missing_pct": 4.908
+    },
+    {
+      "column": "seller_code",
+      "dtype": "String",
+      "null_count": 0,
+      "literal_nan_or_empty": 302181,
+      "missing_total": 302181,
+      "missing_pct": 4.908
+    },
+    {
+      "column": "true_to_size_rate",
+      "dtype": "String",
+      "null_count": 0,
+      "literal_nan_or_empty": 6065516,
+      "missing_total": 6065516,
+      "missing_pct": 98.526
+    }
+  ],
+  "per_column_clean": [
+    {
+      "column": "id",
+      "dtype": "Int64",
+      "null_count": 0,
+      "literal_nan_or_empty": 0,
+      "missing_total": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "column": "title",
+      "dtype": "String",
+      "null_count": 0,
+      "literal_nan_or_empty": 2864793,
+      "missing_total": 2864793,
+      "missing_pct": 46.56
+    },
+    {
+      "column": "body",
+      "dtype": "String",
+      "null_count": 0,
+      "literal_nan_or_empty": 637,
+      "missing_total": 637,
+      "missing_pct": 0.01
+    },
+    {
+      "column": "created_at",
+      "dtype": "String",
+      "null_count": 0,
+      "literal_nan_or_empty": 0,
+      "missing_total": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "column": "rate",
+      "dtype": "Float64",
+      "null_count": 0,
+      "literal_nan_or_empty": 0,
+      "missing_total": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "column": "recommendation_status",
+      "dtype": "String",
+      "null_count": 894045,
+      "literal_nan_or_empty": 0,
+      "missing_total": 894045,
+      "missing_pct": 14.531
+    },
+    {
+      "column": "is_buyer",
+      "dtype": "Boolean",
+      "null_count": 0,
+      "literal_nan_or_empty": 0,
+      "missing_total": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "column": "product_id",
+      "dtype": "Int64",
+      "null_count": 0,
+      "literal_nan_or_empty": 0,
+      "missing_total": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "column": "advantages",
+      "dtype": "String",
+      "null_count": 0,
+      "literal_nan_or_empty": 5445071,
+      "missing_total": 5445071,
+      "missing_pct": 88.497
+    },
+    {
+      "column": "disadvantages",
+      "dtype": "String",
+      "null_count": 0,
+      "literal_nan_or_empty": 5740827,
+      "missing_total": 5740827,
+      "missing_pct": 93.303
+    },
+    {
+      "column": "likes",
+      "dtype": "Int64",
+      "null_count": 0,
+      "literal_nan_or_empty": 0,
+      "missing_total": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "column": "dislikes",
+      "dtype": "Int64",
+      "null_count": 0,
+      "literal_nan_or_empty": 0,
+      "missing_total": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "column": "seller_title",
+      "dtype": "String",
+      "null_count": 0,
+      "literal_nan_or_empty": 301968,
+      "missing_total": 301968,
+      "missing_pct": 4.908
+    },
+    {
+      "column": "seller_code",
+      "dtype": "String",
+      "null_count": 0,
+      "literal_nan_or_empty": 301968,
+      "missing_total": 301968,
+      "missing_pct": 4.908
+    },
+    {
+      "column": "true_to_size_rate",
+      "dtype": "String",
+      "null_count": 0,
+      "literal_nan_or_empty": 6062140,
+      "missing_total": 6062140,
+      "missing_pct": 98.526
+    }
+  ],
+  "recommendation_missing_overall": {
+    "missing": 894045,
+    "total": 6152858,
+    "pct": 14.531
+  },
+  "factors": [
+    {
+      "factor": "is_buyer",
+      "groups": [
+        {
+          "is_buyer": "false",
+          "n": 301968,
+          "missing": 301968,
+          "missing_pct": 100.0
+        },
+        {
+          "is_buyer": "true",
+          "n": 5850890,
+          "missing": 592077,
+          "missing_pct": 10.12
+        }
+      ],
+      "cramers_v": 0.551,
+      "missing_pct_min_group_n_ge_1000": 10.12,
+      "missing_pct_max_group_n_ge_1000": 100.0
+    },
+    {
+      "factor": "rate_bucket",
+      "groups": [
+        {
+          "rate_bucket": "0",
+          "n": 534159,
+          "missing": 26237,
+          "missing_pct": 4.91
+        },
+        {
+          "rate_bucket": "1",
+          "n": 347272,
+          "missing": 42820,
+          "missing_pct": 12.33
+        },
+        {
+          "rate_bucket": "2",
+          "n": 232708,
+          "missing": 33285,
+          "missing_pct": 14.3
+        },
+        {
+          "rate_bucket": "3",
+          "n": 1036137,
+          "missing": 109498,
+          "missing_pct": 10.57
+        },
+        {
+          "rate_bucket": "4",
+          "n": 1605198,
+          "missing": 247779,
+          "missing_pct": 15.44
+        },
+        {
+          "rate_bucket": "5",
+          "n": 2397383,
+          "missing": 434426,
+          "missing_pct": 18.12
+        },
+        {
+          "rate_bucket": "invalid",
+          "n": 1,
+          "missing": 0,
+          "missing_pct": 0.0
+        }
+      ],
+      "cramers_v": 0.1142,
+      "missing_pct_min_group_n_ge_1000": 4.91,
+      "missing_pct_max_group_n_ge_1000": 18.12
+    },
+    {
+      "factor": "prod_bucket",
+      "groups": [
+        {
+          "prod_bucket": "1",
+          "n": 91980,
+          "missing": 18678,
+          "missing_pct": 20.31
+        },
+        {
+          "prod_bucket": "2-5",
+          "n": 322849,
+          "missing": 61254,
+          "missing_pct": 18.97
+        },
+        {
+          "prod_bucket": "6-20",
+          "n": 788419,
+          "missing": 135670,
+          "missing_pct": 17.21
+        },
+        {
+          "prod_bucket": "21-99",
+          "n": 1839898,
+          "missing": 277375,
+          "missing_pct": 15.08
+        },
+        {
+          "prod_bucket": "100-199",
+          "n": 1167179,
+          "missing": 156225,
+          "missing_pct": 13.38
+        },
+        {
+          "prod_bucket": "200+",
+          "n": 1942533,
+          "missing": 244843,
+          "missing_pct": 12.6
+        }
+      ],
+      "cramers_v": 0.0565,
+      "missing_pct_min_group_n_ge_1000": 12.6,
+      "missing_pct_max_group_n_ge_1000": 20.31
+    },
+    {
+      "factor": "year",
+      "groups": [
+        {
+          "year": "1395",
+          "n": 3561,
+          "missing": 3458,
+          "missing_pct": 97.11
+        },
+        {
+          "year": "1396",
+          "n": 6342,
+          "missing": 6177,
+          "missing_pct": 97.4
+        },
+        {
+          "year": "1397",
+          "n": 16679,
+          "missing": 8010,
+          "missing_pct": 48.02
+        },
+        {
+          "year": "1398",
+          "n": 138595,
+          "missing": 18640,
+          "missing_pct": 13.45
+        },
+        {
+          "year": "1399",
+          "n": 684176,
+          "missing": 38497,
+          "missing_pct": 5.63
+        },
+        {
+          "year": "1400",
+          "n": 1253289,
+          "missing": 59902,
+          "missing_pct": 4.78
+        },
+        {
+          "year": "1401",
+          "n": 2165222,
+          "missing": 569038,
+          "missing_pct": 26.28
+        },
+        {
+          "year": "1402",
+          "n": 1884994,
+          "missing": 190323,
+          "missing_pct": 10.1
+        }
+      ],
+      "cramers_v": 0.2793,
+      "missing_pct_min_group_n_ge_1000": 4.78,
+      "missing_pct_max_group_n_ge_1000": 97.4
+    },
+    {
+      "factor": "body_len_bucket",
+      "groups": [
+        {
+          "body_len_bucket": "no_text",
+          "n": 637,
+          "missing": 136,
+          "missing_pct": 21.35
+        },
+        {
+          "body_len_bucket": "1-20",
+          "n": 2223200,
+          "missing": 380310,
+          "missing_pct": 17.11
+        },
+        {
+          "body_len_bucket": "21-50",
+          "n": 2147934,
+          "missing": 273183,
+          "missing_pct": 12.72
+        },
+        {
+          "body_len_bucket": "51-100",
+          "n": 1104038,
+          "missing": 145172,
+          "missing_pct": 13.15
+        },
+        {
+          "body_len_bucket": "101-300",
+          "n": 617813,
+          "missing": 84758,
+          "missing_pct": 13.72
+        },
+        {
+          "body_len_bucket": ">300",
+          "n": 59236,
+          "missing": 10486,
+          "missing_pct": 17.7
+        }
+      ],
+      "cramers_v": 0.0571,
+      "missing_pct_min_group_n_ge_1000": 12.72,
+      "missing_pct_max_group_n_ge_1000": 17.7
+    }
+  ],
+  "figure_path": "reports\\figures\\A2_missing_patterns.png"
+}
