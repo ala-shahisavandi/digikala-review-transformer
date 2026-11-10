@@ -1,0 +1,26 @@
+{
+  "source_parquet": "data\\interim\\digikala_clean.parquet",
+  "total_clean_rows": 6152858,
+  "null_product_id_rows": 0,
+  "clean_product_distribution": {
+    "unique_products": 331598,
+    "min": 1,
+    "mean": 18.56,
+    "std": 40.9,
+    "p25": 1.0,
+    "p50": 4.0,
+    "p75": 13.0,
+    "p90": 46.0,
+    "p95": 110.0,
+    "p99": 200.0,
+    "max": 233,
+    "single_review_products": 91980,
+    "over_300_products": 0,
+    "between_301_350_products": 0,
+    "between_351_399_products": 0,
+    "exact_400_products": 0,
+    "over_400_products": 0
+  },
+  "top_count_spikes_ge_300": [],
+  "figure_path": "reports\\figures\\A1_product_review_distribution.png"
+}

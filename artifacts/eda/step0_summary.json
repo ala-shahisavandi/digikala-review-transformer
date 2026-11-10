@@ -1,0 +1,56 @@
+{
+  "raw_csv_path": "data\\raw\\digikala-comments.csv",
+  "total_rows": 6156289,
+  "unique_ids": 6153060,
+  "benchmark_seconds": {
+    "csv_read_seconds": 17.81,
+    "parquet_write_seconds": 14.42,
+    "parquet_read_seconds": 32.95
+  },
+  "strict_cast_audit": {
+    "rate_raw_null": 0,
+    "rate_literal_nan": 0,
+    "rate_unparseable_non_null": 0,
+    "product_id_raw_null": 0,
+    "product_id_literal_nan": 0,
+    "product_id_unparseable_non_null": 0
+  },
+  "text_hygiene_audit": {
+    "body_null": 0,
+    "body_whitespace_only": 0,
+    "body_literal_nan": 637,
+    "title_null": 0,
+    "title_whitespace_only": 1353,
+    "title_literal_nan": 2865062,
+    "rec_raw_null": 0,
+    "rec_literal_nan_converted_to_null": 894426,
+    "seller_code_null": 0
+  },
+  "rate_out_of_range_count": 1,
+  "rate_out_of_range_records": [
+    {
+      "row_idx": 4369260,
+      "id": 38631814,
+      "product_id": 5095301,
+      "rate": 2500.0
+    }
+  ],
+  "raw_product_review_distribution": {
+    "unique_products": 331599,
+    "products_exact_400_reviews": 3,
+    "products_over_400_reviews": 0,
+    "products_over_300_reviews": 3,
+    "products_301_to_350": 0,
+    "products_351_to_399": 0,
+    "max_reviews_per_product": 400,
+    "p50_reviews": 4.0,
+    "p90_reviews": 46.0,
+    "p99_reviews": 200.0
+  },
+  "raw_top_frequencies_ge_300": [
+    {
+      "review_count": 400,
+      "num_products": 3
+    }
+  ]
+}

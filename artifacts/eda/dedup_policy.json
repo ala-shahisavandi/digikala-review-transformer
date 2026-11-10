@@ -1,0 +1,18 @@
+{
+  "raw_total_rows": 6156289,
+  "raw_unique_ids": 6153060,
+  "total_duplicate_ids": 3226,
+  "cat_A_ids_count": 2911,
+  "cat_B_ids_count": 113,
+  "cat_C_ids_count": 202,
+  "body_diff_whitespace_zwnj_yeh_kaf_only": 87,
+  "body_actual_text_diff": 154,
+  "rows_removed_from_cat_C_drop_all": 404,
+  "rows_removed_from_cat_AB_keep_first_valid": 3027,
+  "total_rows_removed": 3431,
+  "expected_clean_rows_formula": 6152858,
+  "clean_total_rows": 6152858,
+  "clean_unique_ids": 6152858,
+  "formula_verified": true,
+  "output_parquet": "data\\interim\\digikala_clean.parquet"
+}
