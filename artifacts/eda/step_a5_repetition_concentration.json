@@ -1,0 +1,392 @@
+{
+  "rows_with_text": 6152221,
+  "comparison_basis": "normalized text via eda_utils.normalize_text_minimal (raw reported for reference)",
+  "short_text_definition": "<= 3 words",
+  "duplicate_bodies": {
+    "raw": {
+      "unique_bodies": 4135920,
+      "duplicated_bodies": 195604,
+      "rows_in_duplicated_bodies": 2211905,
+      "rows_in_duplicated_bodies_pct": 35.953
+    },
+    "normalized": {
+      "unique_bodies": 4017621,
+      "duplicated_bodies": 191384,
+      "rows_in_duplicated_bodies": 2325984,
+      "rows_in_duplicated_bodies_pct": 37.807,
+      "extra_rows_beyond_first": 2134600
+    },
+    "unique_bodies_merged_by_normalization": 118299
+  },
+  "duplicate_share_by_word_count": [
+    {
+      "wb": "1",
+      "n": 450206,
+      "dup_rows": 441879,
+      "dup_pct": 98.15
+    },
+    {
+      "wb": "2",
+      "n": 565612,
+      "dup_rows": 524157,
+      "dup_pct": 92.671
+    },
+    {
+      "wb": "3",
+      "n": 652171,
+      "dup_rows": 522933,
+      "dup_pct": 80.183
+    },
+    {
+      "wb": "4-5",
+      "n": 1173145,
+      "dup_rows": 630238,
+      "dup_pct": 53.722
+    },
+    {
+      "wb": "6-10",
+      "n": 1521563,
+      "dup_rows": 165841,
+      "dup_pct": 10.899
+    },
+    {
+      "wb": "11-20",
+      "n": 1085368,
+      "dup_rows": 27095,
+      "dup_pct": 2.496
+    },
+    {
+      "wb": "21+",
+      "n": 704156,
+      "dup_rows": 13841,
+      "dup_pct": 1.966
+    }
+  ],
+  "top20_repeated_normalized_texts": [
+    {
+      "norm": "عالی",
+      "n": 136730,
+      "words": 1,
+      "n_products": 60776,
+      "n_rec_labels": 3,
+      "n_band_labels": 3
+    },
+    {
+      "norm": "خوب بود",
+      "n": 90703,
+      "words": 2,
+      "n_products": 47682,
+      "n_rec_labels": 3,
+      "n_band_labels": 3
+    },
+    {
+      "norm": "خوبه",
+      "n": 83856,
+      "words": 1,
+      "n_products": 41562,
+      "n_rec_labels": 3,
+      "n_band_labels": 3
+    },
+    {
+      "norm": "خوب",
+      "n": 70747,
+      "words": 1,
+      "n_products": 39659,
+      "n_rec_labels": 3,
+      "n_band_labels": 3
+    },
+    {
+      "norm": "عالی بود",
+      "n": 31159,
+      "words": 2,
+      "n_products": 23727,
+      "n_rec_labels": 3,
+      "n_band_labels": 3
+    },
+    {
+      "norm": "عالیه",
+      "n": 23935,
+      "words": 1,
+      "n_products": 18604,
+      "n_rec_labels": 3,
+      "n_band_labels": 3
+    },
+    {
+      "norm": "خیلی خوب بود",
+      "n": 17861,
+      "words": 3,
+      "n_products": 14753,
+      "n_rec_labels": 3,
+      "n_band_labels": 3
+    },
+    {
+      "norm": "پیشنهاد میکنم",
+      "n": 15638,
+      "words": 2,
+      "n_products": 13362,
+      "n_rec_labels": 3,
+      "n_band_labels": 3
+    },
+    {
+      "norm": "معمولی",
+      "n": 15411,
+      "words": 1,
+      "n_products": 12324,
+      "n_rec_labels": 3,
+      "n_band_labels": 3
+    },
+    {
+      "norm": "خیلی خوبه",
+      "n": 12802,
+      "words": 2,
+      "n_products": 10926,
+      "n_rec_labels": 3,
+      "n_band_labels": 3
+    },
+    {
+      "norm": "بسیار عالی",
+      "n": 10142,
+      "words": 2,
+      "n_products": 9124,
+      "n_rec_labels": 3,
+      "n_band_labels": 3
+    },
+    {
+      "norm": "بد نیست",
+      "n": 10031,
+      "words": 2,
+      "n_products": 8866,
+      "n_rec_labels": 3,
+      "n_band_labels": 3
+    },
+    {
+      "norm": "نسبت به قیمتش خوبه",
+      "n": 9690,
+      "words": 4,
+      "n_products": 8148,
+      "n_rec_labels": 3,
+      "n_band_labels": 3
+    },
+    {
+      "norm": "قیمت مناسب",
+      "n": 8872,
+      "words": 2,
+      "n_products": 7556,
+      "n_rec_labels": 3,
+      "n_band_labels": 3
+    },
+    {
+      "norm": "کیفیت خوبی داره",
+      "n": 8704,
+      "words": 3,
+      "n_products": 7506,
+      "n_rec_labels": 3,
+      "n_band_labels": 3
+    },
+    {
+      "norm": "راضی بودم",
+      "n": 8469,
+      "words": 2,
+      "n_products": 7580,
+      "n_rec_labels": 3,
+      "n_band_labels": 3
+    },
+    {
+      "norm": "بد نبود",
+      "n": 7783,
+      "words": 2,
+      "n_products": 7048,
+      "n_rec_labels": 3,
+      "n_band_labels": 3
+    },
+    {
+      "norm": "توصیه میکنم",
+      "n": 7728,
+      "words": 2,
+      "n_products": 7066,
+      "n_rec_labels": 3,
+      "n_band_labels": 3
+    },
+    {
+      "norm": "نسبت به قیمت خوبه",
+      "n": 7637,
+      "words": 4,
+      "n_products": 6634,
+      "n_rec_labels": 3,
+      "n_band_labels": 3
+    },
+    {
+      "norm": "خوب بود راضی بودم",
+      "n": 6354,
+      "words": 4,
+      "n_products": 5749,
+      "n_rec_labels": 2,
+      "n_band_labels": 3
+    }
+  ],
+  "label_conflicts": {
+    "all": {
+      "duplicated_groups": 191384,
+      "recommendation": {
+        "groups_with_2plus_labeled_rows": 168170,
+        "conflicting_groups": 31453,
+        "conflict_pct_of_groups": 18.703,
+        "rows_in_conflicting_groups": 1625827
+      },
+      "rating_band": {
+        "groups_with_2plus_labeled_rows": 191384,
+        "conflicting_groups": 81482,
+        "conflict_pct_of_groups": 42.575,
+        "rows_in_conflicting_groups": 1995464
+      },
+      "rating_band_excluding_rate0": {
+        "groups_with_2plus_labeled_rows": 174859,
+        "conflicting_groups": 59646,
+        "conflict_pct_of_groups": 34.111,
+        "rows_in_conflicting_groups": 1888763
+      }
+    },
+    "short": {
+      "duplicated_groups": 55110,
+      "recommendation": {
+        "groups_with_2plus_labeled_rows": 48494,
+        "conflicting_groups": 13741,
+        "conflict_pct_of_groups": 28.335,
+        "rows_in_conflicting_groups": 1260137
+      },
+      "rating_band": {
+        "groups_with_2plus_labeled_rows": 55110,
+        "conflicting_groups": 30070,
+        "conflict_pct_of_groups": 54.564,
+        "rows_in_conflicting_groups": 1409658
+      },
+      "rating_band_excluding_rate0": {
+        "groups_with_2plus_labeled_rows": 51555,
+        "conflicting_groups": 23326,
+        "conflict_pct_of_groups": 45.245,
+        "rows_in_conflicting_groups": 1372399
+      }
+    },
+    "long": {
+      "duplicated_groups": 136274,
+      "recommendation": {
+        "groups_with_2plus_labeled_rows": 119676,
+        "conflicting_groups": 17712,
+        "conflict_pct_of_groups": 14.8,
+        "rows_in_conflicting_groups": 365690
+      },
+      "rating_band": {
+        "groups_with_2plus_labeled_rows": 136274,
+        "conflicting_groups": 51412,
+        "conflict_pct_of_groups": 37.727,
+        "rows_in_conflicting_groups": 585806
+      },
+      "rating_band_excluding_rate0": {
+        "groups_with_2plus_labeled_rows": 123304,
+        "conflicting_groups": 36320,
+        "conflict_pct_of_groups": 29.456,
+        "rows_in_conflicting_groups": 516364
+      }
+    }
+  },
+  "duplicated_texts_across_products": {
+    "duplicated_groups_spanning_multiple_products": 190834,
+    "pct_of_duplicated_groups": 99.713,
+    "rows_in_those_groups": 2324880
+  },
+  "concentration": {
+    "products": {
+      "entity": "product",
+      "n_entities": 331592,
+      "total_reviews": 6152221,
+      "gini": 0.7648,
+      "top_1pct_share_of_reviews": 10.827,
+      "top_5pct_share_of_reviews": 48.06,
+      "top_10pct_share_of_reviews": 67.114,
+      "top_20pct_share_of_reviews": 82.42,
+      "top_10_share_of_reviews": 0.036,
+      "top_100_share_of_reviews": 0.341
+    },
+    "sellers": {
+      "entity": "seller",
+      "n_entities": 29211,
+      "total_reviews": 5850305,
+      "gini": 0.8935,
+      "top_1pct_share_of_reviews": 41.685,
+      "top_5pct_share_of_reviews": 71.789,
+      "top_10pct_share_of_reviews": 84.352,
+      "top_20pct_share_of_reviews": 93.45,
+      "top_10_share_of_reviews": 10.537,
+      "top_100_share_of_reviews": 26.266,
+      "rows_without_seller": 301916
+    },
+    "top10_sellers": [
+      {
+        "seller_code": "5A52N",
+        "len": 348603
+      },
+      {
+        "seller_code": "A5659",
+        "len": 71519
+      },
+      {
+        "seller_code": "5A6GG",
+        "len": 35964
+      },
+      {
+        "seller_code": "A4Z54",
+        "len": 28891
+      },
+      {
+        "seller_code": "ADM47",
+        "len": 27396
+      },
+      {
+        "seller_code": "5AD97",
+        "len": 23171
+      },
+      {
+        "seller_code": "5A6SP",
+        "len": 22616
+      },
+      {
+        "seller_code": "9NT2X",
+        "len": 19986
+      },
+      {
+        "seller_code": "ATT73",
+        "len": 19286
+      },
+      {
+        "seller_code": "CJ9CS",
+        "len": 19032
+      }
+    ],
+    "note": "reviews per product are capped by the scraper (about 200)"
+  },
+  "leakage_simulation": {
+    "seed": 2026,
+    "split": "hash 70/15/15, illustration only",
+    "row_level_random": {
+      "train_rows": 4305559,
+      "test_rows": 923456,
+      "test_rows_product_in_train": 903955,
+      "test_rows_product_in_train_pct": 97.888,
+      "test_rows_text_in_train": 338303,
+      "test_rows_text_in_train_pct": 36.634,
+      "test_long_rows": 673555,
+      "test_long_rows_text_in_train_pct": 17.501
+    },
+    "product_grouped": {
+      "train_rows": 4314985,
+      "test_rows": 930199,
+      "test_rows_product_in_train": 0,
+      "test_rows_product_in_train_pct": 0.0,
+      "test_rows_text_in_train": 340502,
+      "test_rows_text_in_train_pct": 36.605,
+      "test_long_rows": 677992,
+      "test_long_rows_text_in_train_pct": 17.408
+    }
+  },
+  "figure_path": "reports\\figures\\A5_repetition_concentration.png"
+}
