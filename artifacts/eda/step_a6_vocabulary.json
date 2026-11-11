@@ -1,0 +1,1391 @@
+{
+  "sample": {
+    "population_rows_with_text": 6152221,
+    "n": 1000000,
+    "seed": 2026,
+    "rule": "random sample of clean rows with real body text",
+    "min_df_class_terms": 200
+  },
+  "vocabulary": {
+    "sample_reviews": 1000000,
+    "total_tokens": 10118400,
+    "unique_words": 120780,
+    "words_df_ge_5": 26405,
+    "words_df_ge_MIN_DF": 3070,
+    "hapax_words": 68371,
+    "coverage_of_token_occurrences_pct": {
+      "top_50": 41.07,
+      "top_100": 51.37,
+      "top_1000": 82.59,
+      "top_5000": 94.5,
+      "top_20000": 98.27
+    },
+    "hapax_share_of_vocab_pct": 56.61
+  },
+  "top_words": [
+    {
+      "rank": 1,
+      "word": "و",
+      "df": 308294,
+      "pct_reviews": 30.829
+    },
+    {
+      "rank": 2,
+      "word": "بود",
+      "df": 195123,
+      "pct_reviews": 19.512
+    },
+    {
+      "rank": 3,
+      "word": "خیلی",
+      "df": 190163,
+      "pct_reviews": 19.016
+    },
+    {
+      "rank": 4,
+      "word": "خوب",
+      "df": 172893,
+      "pct_reviews": 17.289
+    },
+    {
+      "rank": 5,
+      "word": "به",
+      "df": 148095,
+      "pct_reviews": 14.809
+    },
+    {
+      "rank": 6,
+      "word": "خوبه",
+      "df": 147924,
+      "pct_reviews": 14.792
+    },
+    {
+      "rank": 7,
+      "word": "از",
+      "df": 127880,
+      "pct_reviews": 12.788
+    },
+    {
+      "rank": 8,
+      "word": "عالی",
+      "df": 122662,
+      "pct_reviews": 12.266
+    },
+    {
+      "rank": 9,
+      "word": "من",
+      "df": 113962,
+      "pct_reviews": 11.396
+    },
+    {
+      "rank": 10,
+      "word": "که",
+      "df": 107752,
+      "pct_reviews": 10.775
+    },
+    {
+      "rank": 11,
+      "word": "برای",
+      "df": 99709,
+      "pct_reviews": 9.971
+    },
+    {
+      "rank": 12,
+      "word": "با",
+      "df": 95743,
+      "pct_reviews": 9.574
+    },
+    {
+      "rank": 13,
+      "word": "ولی",
+      "df": 92059,
+      "pct_reviews": 9.206
+    },
+    {
+      "rank": 14,
+      "word": "داره",
+      "df": 87834,
+      "pct_reviews": 8.783
+    },
+    {
+      "rank": 15,
+      "word": "هم",
+      "df": 83848,
+      "pct_reviews": 8.385
+    },
+    {
+      "rank": 16,
+      "word": "کیفیت",
+      "df": 80873,
+      "pct_reviews": 8.087
+    },
+    {
+      "rank": 17,
+      "word": "این",
+      "df": 79732,
+      "pct_reviews": 7.973
+    },
+    {
+      "rank": 18,
+      "word": "قیمت",
+      "df": 74934,
+      "pct_reviews": 7.493
+    },
+    {
+      "rank": 19,
+      "word": "رو",
+      "df": 65101,
+      "pct_reviews": 6.51
+    },
+    {
+      "rank": 20,
+      "word": "در",
+      "df": 60278,
+      "pct_reviews": 6.028
+    },
+    {
+      "rank": 21,
+      "word": "خوبی",
+      "df": 59130,
+      "pct_reviews": 5.913
+    },
+    {
+      "rank": 22,
+      "word": "هست",
+      "df": 56724,
+      "pct_reviews": 5.672
+    },
+    {
+      "rank": 23,
+      "word": "استفاده",
+      "df": 55586,
+      "pct_reviews": 5.559
+    },
+    {
+      "rank": 24,
+      "word": "راضی",
+      "df": 52658,
+      "pct_reviews": 5.266
+    },
+    {
+      "rank": 25,
+      "word": "نیست",
+      "df": 51554,
+      "pct_reviews": 5.155
+    },
+    {
+      "rank": 26,
+      "word": "عالیه",
+      "df": 50954,
+      "pct_reviews": 5.095
+    },
+    {
+      "rank": 27,
+      "word": "نسبت",
+      "df": 48662,
+      "pct_reviews": 4.866
+    },
+    {
+      "rank": 28,
+      "word": "میکنم",
+      "df": 48614,
+      "pct_reviews": 4.861
+    },
+    {
+      "rank": 29,
+      "word": "مناسب",
+      "df": 47319,
+      "pct_reviews": 4.732
+    },
+    {
+      "rank": 30,
+      "word": "جنس",
+      "df": 42160,
+      "pct_reviews": 4.216
+    }
+  ],
+  "top_bigrams": [
+    {
+      "rank": 1,
+      "bigram": "خوب بود",
+      "df": 70903,
+      "pct_reviews": 7.09
+    },
+    {
+      "rank": 2,
+      "bigram": "نسبت به",
+      "df": 37132,
+      "pct_reviews": 3.713
+    },
+    {
+      "rank": 3,
+      "bigram": "عالی بود",
+      "df": 29910,
+      "pct_reviews": 2.991
+    },
+    {
+      "rank": 4,
+      "bigram": "خوب و",
+      "df": 28299,
+      "pct_reviews": 2.83
+    },
+    {
+      "rank": 5,
+      "bigram": "خوبی داره",
+      "df": 27116,
+      "pct_reviews": 2.712
+    },
+    {
+      "rank": 6,
+      "bigram": "خیلی خوبه",
+      "df": 26970,
+      "pct_reviews": 2.697
+    },
+    {
+      "rank": 7,
+      "bigram": "خیلی خوب",
+      "df": 24143,
+      "pct_reviews": 2.414
+    },
+    {
+      "rank": 8,
+      "bigram": "دیجی کالا",
+      "df": 21221,
+      "pct_reviews": 2.122
+    },
+    {
+      "rank": 9,
+      "bigram": "در کل",
+      "df": 19824,
+      "pct_reviews": 1.982
+    },
+    {
+      "rank": 10,
+      "bigram": "به قیمت",
+      "df": 19362,
+      "pct_reviews": 1.936
+    },
+    {
+      "rank": 11,
+      "bigram": "راضی بودم",
+      "df": 19016,
+      "pct_reviews": 1.902
+    },
+    {
+      "rank": 12,
+      "bigram": "پیشنهاد میکنم",
+      "df": 18799,
+      "pct_reviews": 1.88
+    },
+    {
+      "rank": 13,
+      "bigram": "بود و",
+      "df": 18772,
+      "pct_reviews": 1.877
+    },
+    {
+      "rank": 14,
+      "bigram": "به قیمتش",
+      "df": 16980,
+      "pct_reviews": 1.698
+    },
+    {
+      "rank": 15,
+      "bigram": "با کیفیت",
+      "df": 16574,
+      "pct_reviews": 1.657
+    },
+    {
+      "rank": 16,
+      "bigram": "از دیجی",
+      "df": 16347,
+      "pct_reviews": 1.635
+    },
+    {
+      "rank": 17,
+      "bigram": "و با",
+      "df": 14461,
+      "pct_reviews": 1.446
+    },
+    {
+      "rank": 18,
+      "bigram": "بسته بندی",
+      "df": 14260,
+      "pct_reviews": 1.426
+    },
+    {
+      "rank": 19,
+      "bigram": "عالی و",
+      "df": 13894,
+      "pct_reviews": 1.389
+    },
+    {
+      "rank": 20,
+      "bigram": "قیمت مناسب",
+      "df": 13533,
+      "pct_reviews": 1.353
+    },
+    {
+      "rank": 21,
+      "bigram": "داره و",
+      "df": 13312,
+      "pct_reviews": 1.331
+    },
+    {
+      "rank": 22,
+      "bigram": "از این",
+      "df": 12519,
+      "pct_reviews": 1.252
+    },
+    {
+      "rank": 23,
+      "bigram": "راضی هستم",
+      "df": 12390,
+      "pct_reviews": 1.239
+    },
+    {
+      "rank": 24,
+      "bigram": "سفارش دادم",
+      "df": 11846,
+      "pct_reviews": 1.185
+    },
+    {
+      "rank": 25,
+      "bigram": "ممنون از",
+      "df": 11613,
+      "pct_reviews": 1.161
+    },
+    {
+      "rank": 26,
+      "bigram": "بد نیست",
+      "df": 11560,
+      "pct_reviews": 1.156
+    },
+    {
+      "rank": 27,
+      "bigram": "با این",
+      "df": 11543,
+      "pct_reviews": 1.154
+    },
+    {
+      "rank": 28,
+      "bigram": "توصیه میکنم",
+      "df": 11488,
+      "pct_reviews": 1.149
+    },
+    {
+      "rank": 29,
+      "bigram": "استفاده میکنم",
+      "df": 11079,
+      "pct_reviews": 1.108
+    },
+    {
+      "rank": 30,
+      "bigram": "خوبه و",
+      "df": 10704,
+      "pct_reviews": 1.07
+    }
+  ],
+  "class_terms": {
+    "recommendation": {
+      "recommended": [
+        {
+          "word": "دوسشون",
+          "log_odds": 1.462,
+          "pct_in_group": 0.029,
+          "pct_in_rest": 0.006
+        },
+        {
+          "word": "عالیییییییییی",
+          "log_odds": 1.337,
+          "pct_in_group": 0.032,
+          "pct_in_rest": 0.008
+        },
+        {
+          "word": "گوگولی",
+          "log_odds": 1.248,
+          "pct_in_group": 0.084,
+          "pct_in_rest": 0.024
+        },
+        {
+          "word": "خواندنی",
+          "log_odds": 1.191,
+          "pct_in_group": 0.076,
+          "pct_in_rest": 0.023
+        },
+        {
+          "word": "عالیییییییی",
+          "log_odds": 1.167,
+          "pct_in_group": 0.043,
+          "pct_in_rest": 0.013
+        },
+        {
+          "word": "اموزنده",
+          "log_odds": 1.153,
+          "pct_in_group": 0.033,
+          "pct_in_rest": 0.01
+        },
+        {
+          "word": "ومناسب",
+          "log_odds": 1.13,
+          "pct_in_group": 0.039,
+          "pct_in_rest": 0.012
+        },
+        {
+          "word": "مندان",
+          "log_odds": 1.129,
+          "pct_in_group": 0.035,
+          "pct_in_rest": 0.011
+        },
+        {
+          "word": "عالین",
+          "log_odds": 1.12,
+          "pct_in_group": 0.109,
+          "pct_in_rest": 0.035
+        },
+        {
+          "word": "وکاربردی",
+          "log_odds": 1.114,
+          "pct_in_group": 0.038,
+          "pct_in_rest": 0.012
+        },
+        {
+          "word": "خوشگلن",
+          "log_odds": 1.095,
+          "pct_in_group": 0.064,
+          "pct_in_rest": 0.021
+        },
+        {
+          "word": "آموزنده",
+          "log_odds": 1.078,
+          "pct_in_group": 0.138,
+          "pct_in_rest": 0.047
+        },
+        {
+          "word": "وخوش",
+          "log_odds": 1.071,
+          "pct_in_group": 0.035,
+          "pct_in_rest": 0.012
+        },
+        {
+          "word": "وباکیفیت",
+          "log_odds": 1.063,
+          "pct_in_group": 0.033,
+          "pct_in_rest": 0.011
+        },
+        {
+          "word": "عالییییییییی",
+          "log_odds": 1.041,
+          "pct_in_group": 0.033,
+          "pct_in_rest": 0.011
+        }
+      ],
+      "no_idea": [
+        {
+          "word": "نپسندیدم",
+          "log_odds": 2.121,
+          "pct_in_group": 0.142,
+          "pct_in_rest": 0.017
+        },
+        {
+          "word": "تعریفی",
+          "log_odds": 1.935,
+          "pct_in_group": 0.178,
+          "pct_in_rest": 0.026
+        },
+        {
+          "word": "نیومد",
+          "log_odds": 1.893,
+          "pct_in_group": 0.904,
+          "pct_in_rest": 0.137
+        },
+        {
+          "word": "معمولیه",
+          "log_odds": 1.892,
+          "pct_in_group": 2.005,
+          "pct_in_rest": 0.307
+        },
+        {
+          "word": "معمولی",
+          "log_odds": 1.856,
+          "pct_in_group": 6.726,
+          "pct_in_rest": 1.115
+        },
+        {
+          "word": "راستش",
+          "log_odds": 1.821,
+          "pct_in_group": 0.19,
+          "pct_in_rest": 0.031
+        },
+        {
+          "word": "آنچنان",
+          "log_odds": 1.782,
+          "pct_in_group": 0.091,
+          "pct_in_rest": 0.015
+        },
+        {
+          "word": "چندانی",
+          "log_odds": 1.754,
+          "pct_in_group": 0.204,
+          "pct_in_rest": 0.035
+        },
+        {
+          "word": "آنچنانی",
+          "log_odds": 1.744,
+          "pct_in_group": 0.11,
+          "pct_in_rest": 0.019
+        },
+        {
+          "word": "ندیدم",
+          "log_odds": 1.742,
+          "pct_in_group": 0.855,
+          "pct_in_rest": 0.151
+        },
+        {
+          "word": "مطمئن",
+          "log_odds": 1.721,
+          "pct_in_group": 0.512,
+          "pct_in_rest": 0.092
+        },
+        {
+          "word": "چندان",
+          "log_odds": 1.698,
+          "pct_in_group": 0.287,
+          "pct_in_rest": 0.053
+        },
+        {
+          "word": "نیستم",
+          "log_odds": 1.677,
+          "pct_in_group": 0.974,
+          "pct_in_rest": 0.184
+        },
+        {
+          "word": "تاثیری",
+          "log_odds": 1.654,
+          "pct_in_group": 0.553,
+          "pct_in_rest": 0.106
+        },
+        {
+          "word": "خاصی",
+          "log_odds": 1.583,
+          "pct_in_group": 1.299,
+          "pct_in_rest": 0.27
+        }
+      ],
+      "not_recommended": [
+        {
+          "word": "پولتونو",
+          "log_odds": 4.087,
+          "pct_in_group": 0.404,
+          "pct_in_rest": 0.007
+        },
+        {
+          "word": "آشغاله",
+          "log_odds": 4.041,
+          "pct_in_group": 0.213,
+          "pct_in_rest": 0.004
+        },
+        {
+          "word": "مزخرف",
+          "log_odds": 4.035,
+          "pct_in_group": 0.371,
+          "pct_in_rest": 0.007
+        },
+        {
+          "word": "پولتون",
+          "log_odds": 3.932,
+          "pct_in_group": 0.56,
+          "pct_in_rest": 0.011
+        },
+        {
+          "word": "نریزید",
+          "log_odds": 3.795,
+          "pct_in_group": 0.282,
+          "pct_in_rest": 0.006
+        },
+        {
+          "word": "متاسفم",
+          "log_odds": 3.738,
+          "pct_in_group": 1.228,
+          "pct_in_rest": 0.03
+        },
+        {
+          "word": "نخور",
+          "log_odds": 3.724,
+          "pct_in_group": 0.989,
+          "pct_in_rest": 0.024
+        },
+        {
+          "word": "آشغال",
+          "log_odds": 3.709,
+          "pct_in_group": 0.717,
+          "pct_in_rest": 0.018
+        },
+        {
+          "word": "افتضاح",
+          "log_odds": 3.686,
+          "pct_in_group": 3.205,
+          "pct_in_rest": 0.083
+        },
+        {
+          "word": "پولمو",
+          "log_odds": 3.662,
+          "pct_in_group": 0.209,
+          "pct_in_rest": 0.005
+        },
+        {
+          "word": "افتضاحه",
+          "log_odds": 3.6,
+          "pct_in_group": 0.836,
+          "pct_in_rest": 0.023
+        },
+        {
+          "word": "سطل",
+          "log_odds": 3.554,
+          "pct_in_group": 0.305,
+          "pct_in_rest": 0.009
+        },
+        {
+          "word": "نخرید",
+          "log_odds": 3.525,
+          "pct_in_group": 3.432,
+          "pct_in_rest": 0.104
+        },
+        {
+          "word": "بدترین",
+          "log_odds": 3.437,
+          "pct_in_group": 0.275,
+          "pct_in_rest": 0.009
+        },
+        {
+          "word": "پولم",
+          "log_odds": 3.274,
+          "pct_in_group": 0.216,
+          "pct_in_rest": 0.008
+        }
+      ]
+    },
+    "rating_band": {
+      "low": [
+        {
+          "word": "مزخرف",
+          "log_odds": 4.081,
+          "pct_in_group": 0.19,
+          "pct_in_rest": 0.003
+        },
+        {
+          "word": "پولتونو",
+          "log_odds": 3.909,
+          "pct_in_group": 0.203,
+          "pct_in_rest": 0.004
+        },
+        {
+          "word": "آشغاله",
+          "log_odds": 3.65,
+          "pct_in_group": 0.105,
+          "pct_in_rest": 0.003
+        },
+        {
+          "word": "افتضاح",
+          "log_odds": 3.61,
+          "pct_in_group": 1.692,
+          "pct_in_rest": 0.046
+        },
+        {
+          "word": "نخور",
+          "log_odds": 3.524,
+          "pct_in_group": 0.511,
+          "pct_in_rest": 0.015
+        },
+        {
+          "word": "پولتون",
+          "log_odds": 3.443,
+          "pct_in_group": 0.275,
+          "pct_in_rest": 0.009
+        },
+        {
+          "word": "افتضاحه",
+          "log_odds": 3.325,
+          "pct_in_group": 0.433,
+          "pct_in_rest": 0.016
+        },
+        {
+          "word": "آشغال",
+          "log_odds": 3.303,
+          "pct_in_group": 0.361,
+          "pct_in_rest": 0.013
+        },
+        {
+          "word": "بدترین",
+          "log_odds": 3.232,
+          "pct_in_group": 0.146,
+          "pct_in_rest": 0.006
+        },
+        {
+          "word": "سطل",
+          "log_odds": 3.225,
+          "pct_in_group": 0.157,
+          "pct_in_rest": 0.006
+        },
+        {
+          "word": "متاسفم",
+          "log_odds": 3.214,
+          "pct_in_group": 0.606,
+          "pct_in_rest": 0.024
+        },
+        {
+          "word": "پولمو",
+          "log_odds": 3.155,
+          "pct_in_group": 0.104,
+          "pct_in_rest": 0.004
+        },
+        {
+          "word": "نریزید",
+          "log_odds": 3.067,
+          "pct_in_group": 0.134,
+          "pct_in_rest": 0.006
+        },
+        {
+          "word": "نخرید",
+          "log_odds": 3.023,
+          "pct_in_group": 1.728,
+          "pct_in_rest": 0.085
+        },
+        {
+          "word": "پشیمونم",
+          "log_odds": 2.815,
+          "pct_in_group": 0.201,
+          "pct_in_rest": 0.012
+        }
+      ],
+      "medium": [
+        {
+          "word": "معمولیه",
+          "log_odds": 2.139,
+          "pct_in_group": 1.739,
+          "pct_in_rest": 0.208
+        },
+        {
+          "word": "معمولی",
+          "log_odds": 2.124,
+          "pct_in_group": 5.989,
+          "pct_in_rest": 0.756
+        },
+        {
+          "word": "بدنبود",
+          "log_odds": 1.605,
+          "pct_in_group": 0.088,
+          "pct_in_rest": 0.018
+        },
+        {
+          "word": "بدنیست",
+          "log_odds": 1.594,
+          "pct_in_group": 0.253,
+          "pct_in_rest": 0.052
+        },
+        {
+          "word": "بدک",
+          "log_odds": 1.553,
+          "pct_in_group": 0.835,
+          "pct_in_rest": 0.178
+        },
+        {
+          "word": "آنچنانی",
+          "log_odds": 1.543,
+          "pct_in_group": 0.08,
+          "pct_in_rest": 0.017
+        },
+        {
+          "word": "تعریفی",
+          "log_odds": 1.538,
+          "pct_in_group": 0.116,
+          "pct_in_rest": 0.025
+        },
+        {
+          "word": "نپسندیدم",
+          "log_odds": 1.469,
+          "pct_in_group": 0.08,
+          "pct_in_rest": 0.018
+        },
+        {
+          "word": "چندانی",
+          "log_odds": 1.445,
+          "pct_in_group": 0.141,
+          "pct_in_rest": 0.033
+        },
+        {
+          "word": "آنچنان",
+          "log_odds": 1.422,
+          "pct_in_group": 0.061,
+          "pct_in_rest": 0.015
+        },
+        {
+          "word": "میخوری",
+          "log_odds": 1.344,
+          "pct_in_group": 0.081,
+          "pct_in_rest": 0.021
+        },
+        {
+          "word": "چندان",
+          "log_odds": 1.341,
+          "pct_in_group": 0.194,
+          "pct_in_rest": 0.051
+        },
+        {
+          "word": "نیومد",
+          "log_odds": 1.298,
+          "pct_in_group": 0.53,
+          "pct_in_rest": 0.145
+        },
+        {
+          "word": "راستش",
+          "log_odds": 1.298,
+          "pct_in_group": 0.116,
+          "pct_in_rest": 0.032
+        },
+        {
+          "word": "خاصی",
+          "log_odds": 1.256,
+          "pct_in_group": 0.902,
+          "pct_in_rest": 0.258
+        }
+      ],
+      "high": [
+        {
+          "word": "عالیییییییییی",
+          "log_odds": 1.892,
+          "pct_in_group": 0.035,
+          "pct_in_rest": 0.005
+        },
+        {
+          "word": "کیوت",
+          "log_odds": 1.791,
+          "pct_in_group": 0.134,
+          "pct_in_rest": 0.022
+        },
+        {
+          "word": "کیوته",
+          "log_odds": 1.699,
+          "pct_in_group": 0.108,
+          "pct_in_rest": 0.02
+        },
+        {
+          "word": "عالییییییییی",
+          "log_odds": 1.687,
+          "pct_in_group": 0.036,
+          "pct_in_rest": 0.007
+        },
+        {
+          "word": "عالییی",
+          "log_odds": 1.557,
+          "pct_in_group": 0.136,
+          "pct_in_rest": 0.029
+        },
+        {
+          "word": "عالییییی",
+          "log_odds": 1.539,
+          "pct_in_group": 0.088,
+          "pct_in_rest": 0.019
+        },
+        {
+          "word": "گوگولی",
+          "log_odds": 1.536,
+          "pct_in_group": 0.089,
+          "pct_in_rest": 0.019
+        },
+        {
+          "word": "عالیییی",
+          "log_odds": 1.458,
+          "pct_in_group": 0.119,
+          "pct_in_rest": 0.028
+        },
+        {
+          "word": "عالییییییی",
+          "log_odds": 1.389,
+          "pct_in_group": 0.042,
+          "pct_in_rest": 0.01
+        },
+        {
+          "word": "عالیههه",
+          "log_odds": 1.382,
+          "pct_in_group": 0.038,
+          "pct_in_rest": 0.009
+        },
+        {
+          "word": "عالیع",
+          "log_odds": 1.367,
+          "pct_in_group": 0.056,
+          "pct_in_rest": 0.014
+        },
+        {
+          "word": "ناز",
+          "log_odds": 1.366,
+          "pct_in_group": 0.106,
+          "pct_in_rest": 0.027
+        },
+        {
+          "word": "عالیهههه",
+          "log_odds": 1.353,
+          "pct_in_group": 0.037,
+          "pct_in_rest": 0.009
+        },
+        {
+          "word": "عالیییییییی",
+          "log_odds": 1.339,
+          "pct_in_group": 0.045,
+          "pct_in_rest": 0.012
+        },
+        {
+          "word": "عالی",
+          "log_odds": 1.334,
+          "pct_in_group": 16.256,
+          "pct_in_rest": 4.865
+        }
+      ]
+    }
+  },
+  "labeled_vs_natural": {
+    "labeled_reviews": 854840,
+    "natural_unlabeled_reviews": 145160,
+    "jaccard_top5000_words": 0.8202,
+    "oov_rate_natural_vs_labeled_vocab_pct": 2.028,
+    "oov_rate_labeled_vs_natural_vocab_pct": 3.705,
+    "note": "OOV is weighted by document frequency; vocab = words with df >= 5 in the other group",
+    "terms_more_in_natural_unlabeled": [
+      {
+        "word": "موجودش",
+        "log_odds": 3.061,
+        "pct_in_group": 0.193,
+        "pct_in_rest": 0.009
+      },
+      {
+        "word": "نخریدم",
+        "log_odds": 2.981,
+        "pct_in_group": 0.231,
+        "pct_in_rest": 0.012
+      },
+      {
+        "word": "لطفا",
+        "log_odds": 1.587,
+        "pct_in_group": 1.161,
+        "pct_in_rest": 0.24
+      },
+      {
+        "word": "موجود",
+        "log_odds": 1.521,
+        "pct_in_group": 1.063,
+        "pct_in_rest": 0.234
+      },
+      {
+        "word": "نگرفتم",
+        "log_odds": 1.212,
+        "pct_in_group": 0.096,
+        "pct_in_rest": 0.029
+      },
+      {
+        "word": "بگذارید",
+        "log_odds": 1.151,
+        "pct_in_group": 0.052,
+        "pct_in_rest": 0.017
+      },
+      {
+        "word": "خواهش",
+        "log_odds": 0.977,
+        "pct_in_group": 0.055,
+        "pct_in_rest": 0.021
+      },
+      {
+        "word": "عطرهای",
+        "log_odds": 0.918,
+        "pct_in_group": 0.05,
+        "pct_in_rest": 0.02
+      },
+      {
+        "word": "بیارید",
+        "log_odds": 0.911,
+        "pct_in_group": 0.051,
+        "pct_in_rest": 0.021
+      },
+      {
+        "word": "بخریم",
+        "log_odds": 0.908,
+        "pct_in_group": 0.048,
+        "pct_in_rest": 0.02
+      },
+      {
+        "word": "میشم",
+        "log_odds": 0.856,
+        "pct_in_group": 0.056,
+        "pct_in_rest": 0.024
+      },
+      {
+        "word": "اطلاع",
+        "log_odds": 0.84,
+        "pct_in_group": 0.052,
+        "pct_in_rest": 0.023
+      },
+      {
+        "word": "میخوام",
+        "log_odds": 0.819,
+        "pct_in_group": 0.174,
+        "pct_in_rest": 0.077
+      },
+      {
+        "word": "تطابق",
+        "log_odds": 0.787,
+        "pct_in_group": 0.071,
+        "pct_in_rest": 0.032
+      },
+      {
+        "word": "بینظیره",
+        "log_odds": 0.782,
+        "pct_in_group": 0.045,
+        "pct_in_rest": 0.021
+      },
+      {
+        "word": "بزارید",
+        "log_odds": 0.78,
+        "pct_in_group": 0.127,
+        "pct_in_rest": 0.058
+      },
+      {
+        "word": "مشکلات",
+        "log_odds": 0.765,
+        "pct_in_group": 0.045,
+        "pct_in_rest": 0.021
+      },
+      {
+        "word": "موفق",
+        "log_odds": 0.761,
+        "pct_in_group": 0.077,
+        "pct_in_rest": 0.036
+      },
+      {
+        "word": "عاشقشم",
+        "log_odds": 0.751,
+        "pct_in_group": 0.084,
+        "pct_in_rest": 0.04
+      },
+      {
+        "word": "ادکلن",
+        "log_odds": 0.724,
+        "pct_in_group": 0.276,
+        "pct_in_rest": 0.134
+      }
+    ],
+    "terms_more_in_labeled": [
+      {
+        "word": "عکسشو",
+        "log_odds": 1.372,
+        "pct_in_group": 0.061,
+        "pct_in_rest": 0.015
+      },
+      {
+        "word": "میذارم",
+        "log_odds": 1.326,
+        "pct_in_group": 0.066,
+        "pct_in_rest": 0.017
+      },
+      {
+        "word": "قلمو",
+        "log_odds": 1.272,
+        "pct_in_group": 0.026,
+        "pct_in_rest": 0.007
+      },
+      {
+        "word": "تولیدش",
+        "log_odds": 1.236,
+        "pct_in_group": 0.022,
+        "pct_in_rest": 0.006
+      },
+      {
+        "word": "مرجوعش",
+        "log_odds": 1.061,
+        "pct_in_group": 0.124,
+        "pct_in_rest": 0.043
+      },
+      {
+        "word": "گذاشتم",
+        "log_odds": 1.052,
+        "pct_in_group": 0.233,
+        "pct_in_rest": 0.081
+      },
+      {
+        "word": "سوتین",
+        "log_odds": 0.956,
+        "pct_in_group": 0.028,
+        "pct_in_rest": 0.01
+      },
+      {
+        "word": "مقوا",
+        "log_odds": 0.955,
+        "pct_in_group": 0.035,
+        "pct_in_rest": 0.013
+      },
+      {
+        "word": "گلاسه",
+        "log_odds": 0.918,
+        "pct_in_group": 0.04,
+        "pct_in_rest": 0.016
+      },
+      {
+        "word": "فیکه",
+        "log_odds": 0.909,
+        "pct_in_group": 0.044,
+        "pct_in_rest": 0.017
+      },
+      {
+        "word": "عکسی",
+        "log_odds": 0.905,
+        "pct_in_group": 0.067,
+        "pct_in_rest": 0.027
+      },
+      {
+        "word": "دون",
+        "log_odds": 0.888,
+        "pct_in_group": 0.029,
+        "pct_in_rest": 0.012
+      },
+      {
+        "word": "نپسندیدم",
+        "log_odds": 0.864,
+        "pct_in_group": 0.032,
+        "pct_in_rest": 0.013
+      },
+      {
+        "word": "میزارم",
+        "log_odds": 0.859,
+        "pct_in_group": 0.089,
+        "pct_in_rest": 0.037
+      },
+      {
+        "word": "متاسفم",
+        "log_odds": 0.817,
+        "pct_in_group": 0.139,
+        "pct_in_rest": 0.061
+      },
+      {
+        "word": "ذوقم",
+        "log_odds": 0.81,
+        "pct_in_group": 0.067,
+        "pct_in_rest": 0.03
+      },
+      {
+        "word": "باریک",
+        "log_odds": 0.806,
+        "pct_in_group": 0.044,
+        "pct_in_rest": 0.019
+      },
+      {
+        "word": "محتواش",
+        "log_odds": 0.798,
+        "pct_in_group": 0.037,
+        "pct_in_rest": 0.017
+      },
+      {
+        "word": "نظارت",
+        "log_odds": 0.795,
+        "pct_in_group": 0.048,
+        "pct_in_rest": 0.021
+      },
+      {
+        "word": "پررنگ",
+        "log_odds": 0.792,
+        "pct_in_group": 0.086,
+        "pct_in_rest": 0.039
+      }
+    ]
+  },
+  "negation_words": [
+    {
+      "word": "نه",
+      "pct_overall": 0.833,
+      "pct_recommended": 0.555,
+      "pct_no_idea": 1.831,
+      "pct_not_recommended": 2.181,
+      "pct_missing": 0.7
+    },
+    {
+      "word": "نیست",
+      "pct_overall": 5.155,
+      "pct_recommended": 3.243,
+      "pct_no_idea": 13.584,
+      "pct_not_recommended": 12.897,
+      "pct_missing": 4.069
+    },
+    {
+      "word": "نبود",
+      "pct_overall": 2.406,
+      "pct_recommended": 1.082,
+      "pct_no_idea": 7.589,
+      "pct_not_recommended": 8.019,
+      "pct_missing": 1.942
+    },
+    {
+      "word": "نداره",
+      "pct_overall": 2.605,
+      "pct_recommended": 1.641,
+      "pct_no_idea": 5.109,
+      "pct_not_recommended": 8.158,
+      "pct_missing": 2.28
+    },
+    {
+      "word": "ندارد",
+      "pct_overall": 0.319,
+      "pct_recommended": 0.138,
+      "pct_no_idea": 0.581,
+      "pct_not_recommended": 1.541,
+      "pct_missing": 0.296
+    },
+    {
+      "word": "نمی",
+      "pct_overall": 0.966,
+      "pct_recommended": 0.523,
+      "pct_no_idea": 1.861,
+      "pct_not_recommended": 3.865,
+      "pct_missing": 0.79
+    },
+    {
+      "word": "نشد",
+      "pct_overall": 0.224,
+      "pct_recommended": 0.126,
+      "pct_no_idea": 0.461,
+      "pct_not_recommended": 0.817,
+      "pct_missing": 0.184
+    },
+    {
+      "word": "بد",
+      "pct_overall": 2.664,
+      "pct_recommended": 1.591,
+      "pct_no_idea": 7.94,
+      "pct_not_recommended": 5.928,
+      "pct_missing": 2.304
+    },
+    {
+      "word": "ولی",
+      "pct_overall": 9.206,
+      "pct_recommended": 7.784,
+      "pct_no_idea": 20.135,
+      "pct_not_recommended": 10.688,
+      "pct_missing": 7.721
+    },
+    {
+      "word": "اما",
+      "pct_overall": 3.06,
+      "pct_recommended": 2.488,
+      "pct_no_idea": 7.175,
+      "pct_not_recommended": 3.921,
+      "pct_missing": 2.495
+    },
+    {
+      "word": "متاسفانه",
+      "pct_overall": 0.735,
+      "pct_recommended": 0.292,
+      "pct_no_idea": 1.912,
+      "pct_not_recommended": 3.325,
+      "pct_missing": 0.547
+    },
+    {
+      "word": "نخرید",
+      "pct_overall": 0.378,
+      "pct_recommended": 0.049,
+      "pct_no_idea": 0.26,
+      "pct_not_recommended": 3.432,
+      "pct_missing": 0.258
+    },
+    {
+      "word": "نخرین",
+      "pct_overall": 0.037,
+      "pct_recommended": 0.008,
+      "pct_no_idea": 0.041,
+      "pct_not_recommended": 0.291,
+      "pct_missing": 0.028
+    },
+    {
+      "word": "هیچ",
+      "pct_overall": 0.76,
+      "pct_recommended": 0.421,
+      "pct_no_idea": 0.859,
+      "pct_not_recommended": 3.422,
+      "pct_missing": 0.766
+    },
+    {
+      "word": "بدون",
+      "pct_overall": 0.641,
+      "pct_recommended": 0.583,
+      "pct_no_idea": 0.64,
+      "pct_not_recommended": 1.177,
+      "pct_missing": 0.612
+    }
+  ],
+  "stoplist_risk": {
+    "top50_contains_negation_words": [
+      "ولی",
+      "نیست",
+      "اما"
+    ],
+    "top100_contains_negation_words": [
+      "ولی",
+      "نیست",
+      "اما",
+      "بد",
+      "نداره",
+      "نبود"
+    ],
+    "top50_token_coverage_pct": 41.07,
+    "note": "A frequency-based stoplist would delete these words; stopword removal must stay an experiment."
+  },
+  "noise_indicators_pct": {
+    "by_recommendation_class": {
+      "recommended": {
+        "elongation": 3.843,
+        "latin_letters": 0.536,
+        "digits": 3.947,
+        "emoji": 0.813
+      },
+      "no_idea": {
+        "elongation": 3.605,
+        "latin_letters": 0.927,
+        "digits": 6.507,
+        "emoji": 0.556
+      },
+      "not_recommended": {
+        "elongation": 5.629,
+        "latin_letters": 1.297,
+        "digits": 9.267,
+        "emoji": 0.71
+      },
+      "missing": {
+        "elongation": 3.879,
+        "latin_letters": 0.658,
+        "digits": 4.547,
+        "emoji": 0.707
+      }
+    },
+    "labeled": {
+      "elongation": 3.988,
+      "latin_letters": 0.653,
+      "digits": 4.748,
+      "emoji": 0.774
+    },
+    "natural_unlabeled": {
+      "elongation": 3.879,
+      "latin_letters": 0.658,
+      "digits": 4.547,
+      "emoji": 0.707
+    },
+    "overall": {
+      "elongation": 3.972,
+      "latin_letters": 0.654,
+      "digits": 4.719,
+      "emoji": 0.764
+    },
+    "any_negation_word_by_class": {
+      "recommended": 15.264,
+      "no_idea": 47.549,
+      "not_recommended": 50.295,
+      "missing": 18.261
+    }
+  },
+  "figure_path": "reports\\figures\\A6_vocabulary.png"
+}
