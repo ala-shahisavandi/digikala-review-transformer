@@ -1,0 +1,64 @@
+{
+  "SUBSET_SEED": "digikala-subset-v1",
+  "SUBSET_PCT": 15,
+  "VAL_N": 150000,
+  "files": {
+    "train_supervised_sub.csv": {
+      "rows": 536243,
+      "full_rows": 3570148,
+      "size_mb": 63.1
+    },
+    "train_pseudo_unlabeled_sub.csv": {
+      "rows": 110744,
+      "full_rows": 736234,
+      "size_mb": 10.2
+    },
+    "pseudo_reference_labels_sub.csv": {
+      "rows": 110744,
+      "full_rows": 736234,
+      "size_mb": 2.2
+    },
+    "validation_sub.csv": {
+      "rows": 150000,
+      "full_rows": 922671,
+      "size_mb": 18.5
+    },
+    "test.csv": {
+      "rows": 922953,
+      "size_mb": 113.4
+    }
+  },
+  "train_supervised_sub": {
+    "recommendation": {
+      "missing": 94294,
+      "recommended": 349700,
+      "no_idea": 49952,
+      "not_recommended": 42297
+    },
+    "rating_band": {
+      "medium": 91136,
+      "high": 351091,
+      "low": 94016
+    },
+    "rate_zero_rows": 44819
+  },
+  "pseudo_reference_sub_recommendation": {
+    "not_recommended": 10603,
+    "recommended": 87513,
+    "no_idea": 12628
+  },
+  "validation_sub": {
+    "recommendation": {
+      "missing": 21783,
+      "recommended": 101508,
+      "not_recommended": 12243,
+      "no_idea": 14466
+    },
+    "rating_band": {
+      "medium": 25835,
+      "high": 97702,
+      "low": 26463
+    }
+  },
+  "total_csv_mb": 207.4
+}
