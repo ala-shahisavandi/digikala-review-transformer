@@ -1,0 +1,248 @@
+{
+  "script": "src/step_b1_split.py",
+  "seeds": {
+    "SPLIT_SEED": 2026,
+    "MASK_SEED": "digikala-semi-supervised-v1",
+    "MASK_RATE": 0.2
+  },
+  "normalizer": {
+    "module": "src/preprocess.py",
+    "version": "v1",
+    "max_repeat": 3,
+    "keeps": [
+      "emoji",
+      "latin letters",
+      "punctuation",
+      "negation words",
+      "stop words"
+    ],
+    "digits": "Persian/Arabic-Indic digits mapped to ASCII (not deleted)",
+    "zwnj": "mapped to space",
+    "urls": "replaced by the token URL"
+  },
+  "rating_band": {
+    "source_column": "rate (used only to derive the target; never a model input)",
+    "thresholds": {
+      "low": "0 <= rate < 2.5",
+      "medium": "2.5 <= rate < 4.0",
+      "high": "4.0 <= rate <= 5.0"
+    },
+    "ordinal_encoding": {
+      "low": 0,
+      "medium": 1,
+      "high": 2
+    },
+    "invalid": "null, < 0 or > 5 -> rating_band left empty (1 row: id 38631814, rate 2500)"
+  },
+  "recommendation_classes": [
+    "recommended",
+    "no_idea",
+    "not_recommended"
+  ],
+  "split_strategy": "product-grouped; products shuffled with numpy.random.default_rng(SPLIT_SEED) and cut at 70% and 85% of the cumulative row count (train / validation / test)",
+  "masking": {
+    "rule": "within each recommendation class of TRAIN, sort by stable_hash(id) ascending and mask floor(MASK_RATE * class_count) rows",
+    "hash": "int(sha256(f'{MASK_SEED}|{id}').hexdigest()[:16], 16)",
+    "rounding": "floor (integer arithmetic n*20//100)",
+    "per_class": {
+      "recommended": {
+        "labeled_train_rows": 2913181,
+        "masked": 582636,
+        "kept_labeled": 2330545
+      },
+      "no_idea": {
+        "labeled_train_rows": 414799,
+        "masked": 82959,
+        "kept_labeled": 331840
+      },
+      "not_recommended": {
+        "labeled_train_rows": 353199,
+        "masked": 70639,
+        "kept_labeled": 282560
+      }
+    },
+    "total_masked": 736234,
+    "never_masked": [
+      "validation",
+      "test"
+    ]
+  },
+  "input": {
+    "clean_rows": 6152858,
+    "rows_with_text": 6152221,
+    "rows_used_for_modeling": 6152006,
+    "excluded_no_usable_text": 852,
+    "products": 331585
+  },
+  "splits": {
+    "train": {
+      "rows": 4306382,
+      "rows_pct": 70.0,
+      "products": 232007,
+      "recommendation": {
+        "recommended": 2913181,
+        "missing": 625203,
+        "not_recommended": 353199,
+        "no_idea": 414799
+      },
+      "rating_band": {
+        "low": 765357,
+        "high": 2802066,
+        "medium": 738958,
+        "invalid": 1
+      }
+    },
+    "validation": {
+      "rows": 922671,
+      "rows_pct": 14.998,
+      "products": 49602,
+      "recommendation": {
+        "recommended": 625390,
+        "not_recommended": 74927,
+        "no_idea": 88934,
+        "missing": 133420
+      },
+      "rating_band": {
+        "low": 162487,
+        "medium": 159495,
+        "high": 600689
+      }
+    },
+    "test": {
+      "rows": 922953,
+      "rows_pct": 15.002,
+      "products": 49976,
+      "recommendation": {
+        "recommended": 621513,
+        "missing": 135233,
+        "no_idea": 89889,
+        "not_recommended": 76318
+      },
+      "rating_band": {
+        "medium": 159909,
+        "high": 599261,
+        "low": 163783
+      }
+    }
+  },
+  "overall": {
+    "recommendation": {
+      "not_recommended": 504444,
+      "recommended": 4160084,
+      "missing": 893856,
+      "no_idea": 593622
+    },
+    "rating_band": {
+      "low": 1091627,
+      "medium": 1058362,
+      "high": 4002016,
+      "invalid": 1
+    }
+  },
+  "representativeness": {
+    "max_abs_pp_deviation_recommendation": 0.217,
+    "max_abs_pp_deviation_rating_band": 0.134,
+    "missing_recommendation_share_pct": {
+      "train": 14.518,
+      "validation": 14.46,
+      "test": 14.652
+    }
+  },
+  "text_leakage_official_split": {
+    "validation": {
+      "rows": 922671,
+      "rows_text_in_train": 338604,
+      "rows_text_in_train_pct": 36.698,
+      "rows_text_not_in_train": 584067,
+      "long_rows": 673883,
+      "long_rows_text_in_train_pct": 17.456
+    },
+    "test": {
+      "rows": 922953,
+      "rows_text_in_train": 341807,
+      "rows_text_in_train_pct": 37.034,
+      "rows_text_not_in_train": 581146,
+      "long_rows": 671222,
+      "long_rows_text_in_train_pct": 17.612
+    }
+  },
+  "checks": {
+    "no_product_in_two_splits": true,
+    "masked_only_in_train": true,
+    "masked_rows_all_labeled": true,
+    "train_equals_supervised_plus_pseudo": true,
+    "masked_counts_match_floor_rule": true,
+    "ids_unique_across_files": true
+  },
+  "files": {
+    "train_supervised.csv": {
+      "rows": 3570148,
+      "columns": [
+        "id",
+        "product_id",
+        "body",
+        "recommendation_status",
+        "rating_band",
+        "rate"
+      ],
+      "size_mb": 419.14
+    },
+    "train_pseudo_unlabeled.csv": {
+      "rows": 736234,
+      "columns": [
+        "id",
+        "body"
+      ],
+      "size_mb": 67.99
+    },
+    "pseudo_reference_labels.csv": {
+      "rows": 736234,
+      "columns": [
+        "id",
+        "recommendation_status"
+      ],
+      "size_mb": 14.66
+    },
+    "natural_unlabeled.csv": {
+      "rows": 625203,
+      "columns": [
+        "id",
+        "body"
+      ],
+      "size_mb": 55.33
+    },
+    "validation.csv": {
+      "rows": 922671,
+      "columns": [
+        "id",
+        "product_id",
+        "body",
+        "recommendation_status",
+        "rating_band",
+        "rate",
+        "text_in_train"
+      ],
+      "size_mb": 113.82
+    },
+    "test.csv": {
+      "rows": 922953,
+      "columns": [
+        "id",
+        "product_id",
+        "body",
+        "recommendation_status",
+        "rating_band",
+        "rate",
+        "text_in_train"
+      ],
+      "size_mb": 113.39
+    }
+  },
+  "notes": [
+    "Rows with a missing target stay in their product's split; each head uses only rows whose target is valid.",
+    "natural_unlabeled.csv rows are also present in train_supervised.csv (they have a valid rating band).",
+    "pseudo_reference_labels.csv may be used only to audit pseudo-label quality after selection.",
+    "`rate` is kept only for the rate=0 ablation/sensitivity analysis, never as a feature."
+  ],
+  "elapsed_seconds": 396.5
+}
