@@ -162,7 +162,10 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--text", help="review body")
     ap.add_argument("--demo", action="store_true", help="run 5 demo reviews")
+    ap.add_argument("--out", help="write output to this UTF-8 file")
     args = ap.parse_args()
+    if args.out:
+      sys.stdout = open(args.out, "w", encoding="utf-8")
     if not args.text and not args.demo:
         ap.error("give --text or --demo")
 
