@@ -51,3 +51,5 @@ data/interim/*
 
 *.npz
 tokenizer/
+
+!reports/*.csv

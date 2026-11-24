@@ -1,0 +1,79 @@
+{
+  "seed": 2026,
+  "n_per_category": 3,
+  "pool_size_per_category": {
+    "negation_words": 42862,
+    "short_text_le3_words": 23749,
+    "mixed_opinion_but": 51062,
+    "spelling_arabic_yeh_kaf": 0,
+    "repeated_text_in_train": 29846,
+    "no_idea_predicted_recommended": 17062,
+    "band_boundary_cases": 86341,
+    "rate_zero_noise": 69273,
+    "tfidf_right_xlmr_wrong_rec": 34201,
+    "xlmr_right_tfidf_wrong_rec": 52729,
+    "tfidf_right_xlmr_wrong_band": 67178,
+    "xlmr_right_tfidf_wrong_band": 112298
+  },
+  "rec_error_rate_by_feature": {
+    "all": {
+      "n_labeled": 787720,
+      "xlmr_error_pct": 17.22,
+      "tfidf_error_pct": 19.57
+    },
+    "negation_words": {
+      "n_labeled": 130653,
+      "xlmr_error_pct": 32.81,
+      "tfidf_error_pct": 37.71
+    },
+    "mixed_opinion_but": {
+      "n_labeled": 122053,
+      "xlmr_error_pct": 41.84,
+      "tfidf_error_pct": 43.34
+    },
+    "short_text_le3_words": {
+      "n_labeled": 204257,
+      "xlmr_error_pct": 11.63,
+      "tfidf_error_pct": 12.83
+    },
+    "arabic_yeh_kaf": {
+      "n_labeled": 0,
+      "xlmr_error_pct": null,
+      "tfidf_error_pct": null
+    }
+  },
+  "confusion_rec_xlmr": {
+    "no_idea": {
+      "no_idea": 53867,
+      "not_recommended": 13785,
+      "recommended": 76026
+    },
+    "not_recommended": {
+      "no_idea": 18960,
+      "not_recommended": 60372,
+      "recommended": 7665
+    },
+    "recommended": {
+      "no_idea": 17062,
+      "not_recommended": 2161,
+      "recommended": 537822
+    }
+  },
+  "confusion_band_xlmr": {
+    "high": {
+      "high": 470164,
+      "low": 53613,
+      "medium": 49837
+    },
+    "low": {
+      "high": 8783,
+      "low": 75001,
+      "medium": 25274
+    },
+    "medium": {
+      "high": 120314,
+      "low": 35169,
+      "medium": 84798
+    }
+  }
+}
