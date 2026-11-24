@@ -48,3 +48,6 @@ data/interim/*
 !artifacts/eda/*.json
 !artifacts/eda/*.md
 !reports/figures/*.png
+
+*.npz
+tokenizer/
